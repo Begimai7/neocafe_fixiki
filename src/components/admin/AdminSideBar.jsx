@@ -6,7 +6,6 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-// import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import exit from '../../assets/icon/SignOut.svg'
 
@@ -28,9 +27,10 @@ export default function PermanentDrawerLeft() {
       <Drawer 
         sx={{
             backgroundColor:'red',
-          width: drawerWidth,
-          flexShrink: 0,
-          '& .MuiDrawer-paper': {
+            width: drawerWidth,
+            flexShrink: 0,
+            '& .MuiDrawer-paper': {
+            boxShadow:' 0px 4px 5px 0px rgba(136, 118, 197, 0.20)',
             width: drawerWidth,
             boxSizing: 'border-box',
           },
@@ -64,6 +64,8 @@ export default function PermanentDrawerLeft() {
   );
 }
 
+
+
 const SignOutDiv = styled('div')`
     display: flex;
     flex-direction: row;
@@ -80,6 +82,8 @@ const ListItemStyled = styled(ListItem)(() => ({
     paddingLeft:'10px',
 
 }))
+
+
 const ListItemButtonStyle = styled('button')(() => ({
   flexGrow: '0',
   background:'none',
@@ -99,14 +103,16 @@ const ListItemTextStyle = styled(ListItemText)(() => ({
     borderBottom:'2px solid #00315D',
     color:'#00315D',
     cursor:'pointer',
-  }
+  },
+
 }))
 const DrawerStyle = styled('div')(() => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
     height: '100%',
-    paddingBottom: '32px'
+    paddingBottom: '32px',
+    background: 'var(--white, #FEFEFE)',
 }))
 
 const LogotipeAroma = styled('span')`
