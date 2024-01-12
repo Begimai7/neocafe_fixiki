@@ -1,7 +1,11 @@
-import './App.css'
+import AuthAdmin from './components/admin/AdminAuth'
 
 function App() {
-    return <p>hello</p>
+    return (
+        <div>
+            <AuthAdmin />
+        </div>
+    )
 }
 
 export default App
