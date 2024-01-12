@@ -7,7 +7,6 @@ import { Input, Button, Box, styled } from '@mui/material'
 const AuthAdmin = () => {
     return (
         <AuthAdminStyled >
-            <ImgStyled src={AdminBG} />
             <BoxStyled>
                 <Title src={AdminExit} />
                 <InputStyletLog
@@ -42,10 +41,19 @@ const AuthAdminStyled = styled('div')(() => ({
         lineHeight: '2em',
         color: 'C1C1C3',
     },
-
+    backgroundImage: `url(${AdminBG}) `,
+    backgroundRepeat: 'no-repeat', // Prevent background image from repeating
+    backgroundSize: 'cover',
+    height: '100vh',
     width: '100%',
     borderBottom: 'none',
-    margin: '0 auto'
+    margin: '0 auto',
+    display: 'flex',
+    alignContent: 'center',
+    justifyContent: 'center',
+    boxSizing:'border-box',
+    flexDirection:'column'
+
 }))
 
 const ImgStyled = styled('img')(() => ({
@@ -54,14 +62,18 @@ const ImgStyled = styled('img')(() => ({
 
 const BoxStyled = styled(Box)(() => ({
     display: 'flex',
+    margin: '0 auto',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    position: 'absolute',
-    width: '614px',
-    height: '548px',
-    top: '176px',
-    left: '413px',
+    padding: '20px',
+    boxSizing: 'border-box',
+    // marginTop:'800px',
+    // position: 'absolute',
+    // width: '614px',
+    // height: '548px',
+    // top: '176px',
+    // left: '413px',
     borderRadius: '20px',
     backgroundColor: '#FEFEFE',
 }))
