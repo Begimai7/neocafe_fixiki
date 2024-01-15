@@ -1,30 +1,20 @@
 import React from 'react'
 import AdminBG from '../../assets/img/adminBg.png'
-import AdminExit from '../../assets/img/AdminExit.png'
-import AdminIcon from '../../assets/icon/AdminIcon.svg'
 import { Input, Button, Box, styled } from '@mui/material'
+import PasswordInput from '../UI/PasswordInput'
 
 const AuthAdmin = () => {
     return (
-        <AuthAdminStyled >
+        <AuthAdminStyled>
             <BoxStyled>
-                <Title src={AdminExit} />
+                <Title>Вход</Title>
                 <InputStyletLog
                     className="login"
                     placeholder="Логин"
                     type="text"
                 />
                 <RelativeBox>
-                    <InputStyletPass
-                        className="password"
-                        type="password"
-                        placeholder="Пароль"
-                    />
-                    <IconButton
-                        src={AdminIcon}
-                        alt=""
-                        className="iconButtons"
-                    />
+                    <PasswordInput />
                 </RelativeBox>
 
                 <ButtonStylet className="clik">Войти</ButtonStylet>
@@ -42,7 +32,7 @@ const AuthAdminStyled = styled('div')(() => ({
         color: 'C1C1C3',
     },
     backgroundImage: `url(${AdminBG}) `,
-    backgroundRepeat: 'no-repeat', // Prevent background image from repeating
+    backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     height: '100vh',
     width: '100%',
@@ -51,9 +41,12 @@ const AuthAdminStyled = styled('div')(() => ({
     display: 'flex',
     alignContent: 'center',
     justifyContent: 'center',
-    boxSizing:'border-box',
-    flexDirection:'column'
+    boxSizing: 'border-box',
+    flexDirection: 'column',
 
+    '.css-11oaws3-MuiInputBase-root-MuiInput-root::after': {
+        borderBottom: 'none',
+    },
 }))
 
 const ImgStyled = styled('img')(() => ({
@@ -78,8 +71,8 @@ const BoxStyled = styled(Box)(() => ({
     backgroundColor: '#FEFEFE',
 }))
 
-const Title = styled('img')(() => ({
-    fontFamily: 'Nunito',
+const Title = styled('h1')(() => ({
+    fontFamily: 'Nunito Sans',
     fontSize: '72px',
     fontStyle: 'normal',
     fontWeight: '700',
@@ -99,26 +92,13 @@ const InputStyletLog = styled(Input)(() => ({
     '::before': {
         borderBottom: 'none',
     },
-  }))
-  
-const RelativeBox = styled('div')(()=>({
-  position: 'relative'
-}))
-const InputStyletPass = styled(Input)(() => ({
-  padding: '24px 16px 24px 16px',
-    borderRadius: '10px',
-    gap: '10px',
-    width: '534px',
-    backgroundColor: '#EDEDED',
-    height: '75px',
-    marginBottom: '20px',
-    borderRadius: '10px',
-    '::before': {
-      borderBottom: 'none',
+    '.css-11oaws3-MuiInputBase-root-MuiInput-root::after': {
+        borderBottom: 'none',
     },
-    // '::after': {
-    //     borderBottom: 'none ',
-    // },
+}))
+
+const RelativeBox = styled('div')(() => ({
+    position: 'relative',
 }))
 
 const IconButton = styled('img')(() => ({
@@ -139,7 +119,7 @@ const ButtonStylet = styled('button')(() => ({
     color: '#FEFEFE',
     backgroundColor: '#00315D',
     height: '75px',
-    marginBottom: '80px',
+    marginBottom: '50px',
     borderRadius: '10px',
     animation: 'none',
 }))
