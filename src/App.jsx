@@ -1,9 +1,11 @@
-import AuthAdmin from './components/admin/AdminAuth'
+// import AuthAdmin from './components/admin/AdminAuth'
+import Input from '../src/components/UI/Input'
 
 function App() {
     return (
         <div>
-            <AuthAdmin />
+            {/* <AuthAdmin /> */}
+            <Input width='600px' />
         </div>
     )
 }

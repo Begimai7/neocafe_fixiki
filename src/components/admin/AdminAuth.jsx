@@ -61,12 +61,6 @@ const BoxStyled = styled(Box)(() => ({
     alignItems: 'center',
     padding: '20px',
     boxSizing: 'border-box',
-    // marginTop:'800px',
-    // position: 'absolute',
-    // width: '614px',
-    // height: '548px',
-    // top: '176px',
-    // left: '413px',
     borderRadius: '20px',
     backgroundColor: '#FEFEFE',
 }))
