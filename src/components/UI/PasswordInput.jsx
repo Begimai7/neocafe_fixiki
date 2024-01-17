@@ -32,7 +32,7 @@ const PasswordInput = forwardRef((props, ref) => {
                             <IconButton
                                 onClick={handleClickShowPassword}
                                 onMouseDown={handleMouseDownPassword}
-                                edge="enffdd"
+                                edge="end"
                             >
                                 {showPassword ? (
                                     <img src={Open} />
