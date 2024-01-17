@@ -1,20 +1,16 @@
 import React from 'react'
 import AdminBG from '../../assets/img/adminBg.png'
-import { Input, Button, Box, styled } from '@mui/material'
-import PasswordInput from '../UI/PasswordInput'
+import { styled, TextField } from '@mui/material'
+import PasswordInput from '../UI/passwordInput'
 
 const AuthAdmin = () => {
     return (
         <AuthAdminStyled>
             <BoxStyled>
                 <Title>Вход</Title>
-                <InputStyletLog
-                    className="login"
-                    placeholder="Логин"
-                    type="text"
-                />
                 <RelativeBox>
-                    <PasswordInput />
+                    <InputStyletLog placeholder="Логин" type="text" />
+                    <PasswordInput padding="20px 0" />
                 </RelativeBox>
 
                 <ButtonStylet className="clik">Войти</ButtonStylet>
@@ -49,24 +45,15 @@ const AuthAdminStyled = styled('div')(() => ({
     },
 }))
 
-const ImgStyled = styled('img')(() => ({
-    position: 'relative',
-}))
-
-const BoxStyled = styled(Box)(() => ({
+const BoxStyled = styled('form')(() => ({
     display: 'flex',
     margin: '0 auto',
+    width: '40%',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     padding: '20px',
     boxSizing: 'border-box',
-    // marginTop:'800px',
-    // position: 'absolute',
-    // width: '614px',
-    // height: '548px',
-    // top: '176px',
-    // left: '413px',
     borderRadius: '20px',
     backgroundColor: '#FEFEFE',
 }))
@@ -80,46 +67,41 @@ const Title = styled('h1')(() => ({
     marginBottom: '45px',
 }))
 
-const InputStyletLog = styled(Input)(() => ({
-    padding: '24px 16px 24px 16px',
+const InputStyletLog = styled(TextField)(() => ({
     borderRadius: '10px',
     gap: '10px',
-    width: '534px',
-    height: '75px',
+    width: '100%',
+    outline: 'none',
     marginBottom: '20px',
+    border: 'none',
+    outline: 'none',
     background: '#EDEDED',
     borderBottom: 'none',
-    '::before': {
-        borderBottom: 'none',
+    '.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root ': {
+        borderRadius: '10px',
     },
-    '.css-11oaws3-MuiInputBase-root-MuiInput-root::after': {
-        borderBottom: 'none',
+    '.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input': {
+        padding: '17px 0',
     },
 }))
 
 const RelativeBox = styled('div')(() => ({
-    position: 'relative',
-}))
-
-const IconButton = styled('img')(() => ({
-    zIndex: '10',
-    position: 'absolute',
-    right: 22,
-    top: 25,
-    width: '22px',
-    height: '22px',
-    flexShrink: '0',
+    width: '100%',
 }))
 
 const ButtonStylet = styled('button')(() => ({
-    padding: '24px 16px 24px 16px',
+    padding: '20px 0',
+    border: 'none',
     borderRadius: '10px',
     gap: '10px',
-    width: '534px',
+    width: '100%',
     color: '#FEFEFE',
     backgroundColor: '#00315D',
-    height: '75px',
     marginBottom: '50px',
     borderRadius: '10px',
     animation: 'none',
+
+    ':hover': {
+        background: '',
+    },
 }))
