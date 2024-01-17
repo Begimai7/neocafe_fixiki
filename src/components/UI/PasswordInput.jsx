@@ -17,11 +17,13 @@ const PasswordInput = forwardRef((props, ref) => {
     return (
         <div>
             <StyledPasswordInput
-                placeholder='Пароль'
+                placeholder="Пароль"
                 label={props.label}
                 type={showPassword ? 'text' : 'password'}
                 variant="outlined"
                 onBlur={props.onBlur}
+                width={props.width}
+                padding={props.padding}
                 id={props.id}
                 ref={ref}
                 name={props.name}
@@ -52,39 +54,21 @@ const PasswordInput = forwardRef((props, ref) => {
 export default PasswordInput
 
 const StyledPasswordInput = styled(TextField)(({ error }) => ({
+    width: '100%',
     '& .MuiOutlinedInput-root': {
-        width: '534px',
-        height: '70px',
+        width: '100%',
+        heigth: '66px',
         borderRadius: '10px',
         marginBottom: '20px',
         backgroundColor: '#EDEDED',
         border: error ? '1px solid red' : '',
         color: error ? 'red' : '',
-        '&:hover fieldset': {
-            borderColor: error ? 'red' : '#6200EE',
-        },
-        '&.Mui-focused fieldset': {
-            borderColor: '#6200EE',
-        },
-        '::before': {
-            borderColor: 'none',
-        },
-        '::after': {
-            borderColor: 'none',
-        },
     },
+    '.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input': {},
 }))
 
 const InputAdornment = styled('div')(() => ({
-    // padding: '24px 16px 24px 16px',
-    // borderRadius: '10px',
-    // gap: '10px',
-    // width: '534px',
-    // backgroundColor: '#EDEDED',
-    // height: '75px',
-    // marginBottom: '20px',
-    // borderRadius: '10px',
-    // '::before': {
-    //     borderBottom: 'none',
-    // },
+    '::before': {
+        borderBottom: 'none',
+    },
 }))
