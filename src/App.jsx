@@ -1,7 +1,7 @@
-import PermanentDrawerLeft from "./components/admin/AdminSideBar"
 
 function App() {
-    return <PermanentDrawerLeft/>
+    return (
+        <div/>
+    )
 }
-
 export default App
