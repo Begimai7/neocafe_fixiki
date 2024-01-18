@@ -1,11 +1,14 @@
 // import AuthAdmin from './components/admin/AdminAuth'
-import Input from '../src/components/UI/Input'
+import Input from '../src/components/UI/Input.jsx'
 
-function App() {
+function App( width,padding) {
     return (
-        <div>
+        <div width padding>
             {/* <AuthAdmin /> */}
-            <Input width='600px' />
+            <Input width={width} />
+            <Input />
+            <Input width="600px" />
+            <Input  />
         </div>
     )
 }
