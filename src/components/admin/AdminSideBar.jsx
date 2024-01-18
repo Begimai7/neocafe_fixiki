@@ -7,11 +7,12 @@ import Toolbar from '@mui/material/Toolbar'
 import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
 import ListItemText from '@mui/material/ListItemText'
-import exit from '../../assets/icon/SignOut.svg'
+import exit from '../../assets/icon/exist.svg'
+import { sidebarMenu } from '../../utils/constants'
 
 const drawerWidth = 202
 
-export default function PermanentDrawerLeft() {
+export default function SideBar({ existHandler }) {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
@@ -44,18 +45,16 @@ export default function PermanentDrawerLeft() {
                             </LogotipeAroma>
                         </Toolbar>
                         <List>
-                            {['Меню', 'Склад', 'Филиалы', 'Сотрудники'].map(
-                                (text) => (
-                                    <ListItemStyled key={text} disablePadding>
-                                        <ListItemButtonStyle>
-                                            <ListItemTextStyle primary={text} />
-                                        </ListItemButtonStyle>
-                                    </ListItemStyled>
-                                ),
-                            )}
+                            {sidebarMenu.map((el) => (
+                                <ListItemStyled key={el.id} disablePadding>
+                                    <ListItemButtonStyle>
+                                        <ListItemTextStyle primary={el.name} />
+                                    </ListItemButtonStyle>
+                                </ListItemStyled>
+                            ))}
                         </List>
                     </div>
-                    <SignOutDiv>
+                    <SignOutDiv onClick={existHandler}>
                         <span>Выход</span>
                         <img src={exit} alt="" />
                     </SignOutDiv>
@@ -90,12 +89,17 @@ const ListItemButtonStyle = styled('button')(() => ({
 
 const ListItemTextStyle = styled(ListItemText)(() => ({
     borderBottom: '2px solid  #ffffff0',
+    fontWeight: 900,
+    fontSize: '18px',
 
     ':hover': {
         transition: '0.1s',
         borderBottom: '2px solid #00315D',
         color: '#00315D',
         cursor: 'pointer',
+        fontSize: '18px',
+        fontWeight: 900,
+        fontFamily: 'Nunito Sans',
     },
 }))
 const DrawerStyle = styled('div')(() => ({
