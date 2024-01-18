@@ -2,30 +2,39 @@ import * as React from 'react'
 import { Box, styled } from '@mui/material'
 import TextField from '@mui/material/TextField'
 
-export default function Input({ width, padding, label }) {
+export default function Input({ width, padding, label, type, background }) {
     return (
-        <div>
-            <Label>{label}</Label>
-            <InputStayled width={width} padding={padding} />
-        </div>
+        <InputContainer width={width}>
+            <Label width={width}>{label}</Label>
+            <InputStayled
+                width={width}
+                padding={padding}
+                type="text"
+                background={background}
+            />
+        </InputContainer>
     )
 }
 
-const Label = styled('label')(({ width, padding }) => ({
-  color: '#C1C1C3',
-  fontFamily: 'Nunito Sans',
-  fontSize: '16px',
-  fontStyle: 'normal',
-  fontWeight: '600',
-  lineHeight: '100%',
+const InputContainer = styled('div')(({ width }) => ({
+    display: 'flex',
+    flexDirection: 'column',
+    width,
+    gap: '8px',
 }))
-const InputStayled = styled(TextField)(({ width, padding }) => ({
+const Label = styled('label')(({ width, padding }) => ({
+    color: '#C1C1C3',
+    fontFamily: 'Nunito Sans',
+    fontSize: '16px',
+    fontStyle: 'normal',
+    fontWeight: '600',
+    lineHeight: '100%',
+}))
+const InputStayled = styled(TextField)(({ width, padding, background }) => ({
     borderRadius: '10px',
+    backgroundColor: '#EDEDE6',
+    color: '#0000',
     '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': {
         borderColor: 'transparent',
-    },
-    '.css-1d3z3hw-MuiOutlinedInput-notchedOutline ': {
-        width: width,
-        background: ' #EDEDED',
     },
 }))
