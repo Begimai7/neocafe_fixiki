@@ -2,33 +2,39 @@ import * as React from 'react'
 import { Box, styled } from '@mui/material'
 import TextField from '@mui/material/TextField'
 
-export default function Input({ width, padding, label }) {
+export default function Input({ width, padding, label, type, background, placeholder}) {
     return (
-        <DivStaylet
-            component="form"
-            sx={{
-                '& > :not(style)': { m: 1, width: '25ch' },
-            }}
-            noValidate
-            autoComplete="off"
-        >
-            <label>{label}</label>
-            <InputStaylet width={width} padding={padding} />
-        </DivStaylet>
+        <InputContainer width={width}>
+            <Label width={width}>{label}</Label>
+            <InputStayled
+                width={width}
+                padding={padding}
+                type="text"
+                background={background}
+                placeholder={placeholder}
+            />
+        </InputContainer>
     )
 }
-const DivStaylet = styled(Box)(() => ({
-    ' .css-9ddj71-MuiInputBase-root-MuiOutLinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutLine':
-        {
-            borderColor: 'none',
-        },
-}))
 
-const InputStaylet = styled(TextField)(({ width, padding }) => ({
-    padding,
-    background: ' #EDEDED',
-    width: '700px',
+const InputContainer = styled('div')(({ width }) => ({
+    display: 'flex',
+    flexDirection: 'column',
+    width,
+    gap: '8px',
+}))
+const Label = styled('label')(({ width, padding }) => ({
+    color: '#C1C1C3',
+    fontFamily: 'Nunito Sans',
+    fontSize: '16px',
+    fontStyle: 'normal',
+    fontWeight: '600',
+    lineHeight: '100%',
+}))
+const InputStayled = styled(TextField)(({ width, padding, background }) => ({
     borderRadius: '10px',
+    backgroundColor: background,
+    color: '#0000',
     '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': {
         borderColor: 'transparent',
     },

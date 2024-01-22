@@ -51,7 +51,7 @@ export default function SideBar({ existHandler }) {
                                         <ListItemTextStyle primary={el.name} />
                                     </ListItemButtonStyle>
                                 </ListItemStyled>
-                            ))}
+                            ))}     
                         </List>
                     </div>
                     <SignOutDiv onClick={existHandler}>
