@@ -16,9 +16,8 @@ function Button(props) {
 export default Button
 
 const UiButtonStyled = styled.button`
-    border-color: ${(props) => props.borderColor || '0px'};
-    border: ${(props) => props.border || '0px solid'};
-    background-color: ${(props) => props.backgroun || '#00315D'};
+    border: ${(props) => props.borderColor};
+    background-color: ${(props) => props.background || ''};
     border-radius: ${(props) => props.borderRadius || '0px'};
     padding: ${(props) => props.padding || '16px 70px'};
     color: ${(props) => props.color || '#00315D'};

@@ -19,7 +19,7 @@ export default function Modal({ children, open, handleClose, borderRadius }) {
     return (
         <div>
             <StyledModal
-                open={open}
+                open={true}
                 onClose={handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
