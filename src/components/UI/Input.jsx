@@ -2,12 +2,20 @@ import * as React from 'react'
 import { Box, styled } from '@mui/material'
 import TextField from '@mui/material/TextField'
 
-export default function Input({ width, padding, label, type, background }) {
+export default function Input({
+    width,
+    padding,
+    label,
+    type,
+    background,
+    placeholder,
+}) {
     return (
         <InputContainer width={width}>
             <Label width={width}>{label}</Label>
             <InputStayled
                 width={width}
+                placeholder={placeholder}
                 padding={padding}
                 type="text"
                 background={background}
@@ -33,6 +41,7 @@ const Label = styled('label')(({ width, padding }) => ({
 const InputStayled = styled(TextField)(({ width, padding, background }) => ({
     borderRadius: '10px',
     backgroundColor: '#EDEDE6',
+
     color: '#0000',
     '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': {
         borderColor: 'transparent',
