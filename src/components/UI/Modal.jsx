@@ -15,7 +15,7 @@ const style = {
     p: 4,
 }
 
-export default function Modal({ children, open, handleClose, borderRadius }) {
+export default function Modal({ children, open, handleClose, borderRadius, width }) {
     return (
         <div>
             <StyledModal
@@ -24,6 +24,7 @@ export default function Modal({ children, open, handleClose, borderRadius }) {
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
                 borderRadius={borderRadius}
+                width={width}
             >
                 <Box sx={style}>{children}</Box>
             </StyledModal>
@@ -31,10 +32,11 @@ export default function Modal({ children, open, handleClose, borderRadius }) {
     )
 }
 
-const StyledModal = styled(MuiModal)(({ borderRadius }) => ({
+const StyledModal = styled(MuiModal)(({ borderRadius, width }) => ({
     '.css-1wnsr1i ': {
         outline: 'none',
         border: 'none',
+        width: width,
         borderRadius: borderRadius,
     },
 }))

@@ -9,6 +9,7 @@ export default function Input({
     type,
     background,
     marginBottom,
+    placeholder,
 }) {
     return (
         <InputContainer width={width} marginBottom={marginBottom}>
@@ -18,6 +19,7 @@ export default function Input({
                 padding={padding}
                 type="text"
                 background={background}
+                placeholder={placeholder}
             />
         </InputContainer>
     )
@@ -40,7 +42,7 @@ const Label = styled('label')(({ width, padding }) => ({
 }))
 const InputStayled = styled(TextField)(({ width, padding, background }) => ({
     borderRadius: '10px',
-    backgroundColor: '#EDEDE6',
+    backgroundColor: background,
     color: '#0000',
     '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': {
         borderColor: 'transparent',
