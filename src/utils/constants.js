@@ -20,7 +20,28 @@ export const sidebarMenu = [
         path: '/сотрудники',
     },
 ]
-
+export const SelectData = [
+    {
+        id: 1,
+        name: 'Кофе',
+    },
+    {
+        id: 2,
+        name: 'Десерты',
+    },
+    {
+        id: 3,
+        name: 'Выпечка',
+    },
+    {
+        id: 4,
+        name: 'Коктейли',
+    },
+    {
+        id: 5,
+        name: 'Чай',
+    }
+  ]
 export const weekAddNewFilial = [
     {
         id: '1',
