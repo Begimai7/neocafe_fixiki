@@ -3,6 +3,8 @@ import Modal from '../UI/Modal'
 import Input from '../UI/Input'
 import styled from 'styled-components'
 import Button from '../UI/Button'
+import Select from '../UI/Select'
+import { editSklad } from '../../utils/constants'
 
 export const EditSkladModal = ({ open, handleClose }) => {
     return (
@@ -16,7 +18,7 @@ export const EditSkladModal = ({ open, handleClose }) => {
             <SpanStyled>Наименование, категория и стоимость</SpanStyled>
 
             <DivStyled>
-                <Input label="Наименование" width="100%" marginBottom="20px" />
+                <Input label="Наименование" width="100%" marginBottom="10px" />
 
                 <StyledDiv>
                     <div>
@@ -30,38 +32,45 @@ export const EditSkladModal = ({ open, handleClose }) => {
                             width="98%"
                             marginBottom="20px"
                         />
-                        <Button
-                            borderRadius="8px"
-                            color=" #00315D"
-                            borderColor="blue"
-                            border="1px solid #00315D "
-                        >
-                            Отмена
-                        </Button>
                     </div>
                     <div>
-                        <Input
-                            label="Категория"
-                            width="98%"
-                            marginBottom="20px"
+                        <Select
+                            labelText="Категория"
+                            width="190px"
+                            marginBottom="10px"
+                            SelectData={editSklad}
                         />
                         <Input
                             label="Дата прихода"
-                            width="98%"
+                            width="190px"
                             marginBottom="20px"
-                            type="date"
                         />
-                        <Button
-                            borderRadius="8px"
-                            color="white"
-                            background="blue"
-                        >
-                            Сохранить
-                        </Button>
                     </div>
                 </StyledDiv>
                 <diDivButtonStyledv></diDivButtonStyledv>
             </DivStyled>
+            <div>
+                <Button
+                    width="48%"
+                    borderRadius="8px"
+                    color=" #00315D"
+                    borderColor="blue"
+                    border="1px solid #00315D "
+                    backgroundColor=" #FEFEFE"
+                    
+                >
+                    Отмена
+                </Button>
+                <Button
+                    marginLeft="4%"
+                    borderRadius="8px"
+                    color="white"
+                    background=" #00315D"
+                    width="48%"
+                >
+                    Сохранить
+                </Button>
+            </div>
         </Modal>
     )
 }
@@ -77,7 +86,7 @@ const DivStyled = styled('div')({
 const TextStyled = styled('h5')({
     marginBottom: '24px',
     marginTop: '3px',
-    marginLeft: 'px',
+    marginLeft: '5px',
     fontFamily: 'Nunito Sans',
     fontSize: '24px',
     fontWeight: '700',
