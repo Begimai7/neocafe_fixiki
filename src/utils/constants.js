@@ -20,6 +20,20 @@ export const sidebarMenu = [
         path: '/сотрудники',
     },
 ]
+export const tabTitle = [
+    {
+        id: 1,
+        name: 'Готовая продукция',
+    },
+    {
+        id: 2,
+        name: 'Сырье',
+    },
+    {
+        id: 3,
+        name: 'Заканчивающиеся продукты',
+    },
+]
 export const SelectData = [
     {
         id: 1,
