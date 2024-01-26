@@ -1,22 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { IconButton, styled } from '@mui/material'
 import Modal from '../UI/Modal'
 import Input from '../UI/Input'
 import Button from '../UI/Button'
 import IconX from '../../assets/icon/X.svg'
-function CreateNewCategory() {
-    const [open, setOpen] = useState(false)
-
-    const openCart = () => {
-        setOpen(!open)
-    }
+function CreateNewCategory({open, handleClose, width) {
 
     return (
         <div width="100%">
-            <button onClick={openCart}>create</button>
             <Modal
                 open={open}
-                handleClose={openCart}
+                handleClose={handleClose}
                 width="30%"
                 border="30px"
                 borderRadius={'30px'}

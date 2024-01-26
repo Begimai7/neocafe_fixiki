@@ -24,6 +24,7 @@ export default function Modal({
         width: width,
         p: 4,
     }
+
     return (
         <div>
             <StyledModal
@@ -32,6 +33,7 @@ export default function Modal({
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
                 borderRadius={borderRadius}
+                width={width}
             >
                 <Box sx={style}>{children}</Box>
             </StyledModal>
@@ -39,10 +41,11 @@ export default function Modal({
     )
 }
 
-const StyledModal = styled(MuiModal)(({ borderRadius }) => ({
+const StyledModal = styled(MuiModal)(({ borderRadius, width }) => ({
     '.css-1wnsr1i ': {
         outline: 'none',
         border: 'none',
+        width: width,
         borderRadius: borderRadius,
     },
 }))
