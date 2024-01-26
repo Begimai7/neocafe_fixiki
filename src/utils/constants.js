@@ -86,3 +86,17 @@ export const weekAddNewFilial = [
         day: 'Воскресенье'
     },
 ]
+export const editSklad = [
+    {
+        id: '1',
+        name: 'Выберите категорию',
+    },
+    {
+        id: '2',
+        name: 'Готовая продукция',
+    },
+    {
+        id: '3',
+        name: 'Сырье',
+    },
+]
