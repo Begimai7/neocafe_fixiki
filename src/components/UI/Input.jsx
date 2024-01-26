@@ -16,6 +16,7 @@ export default function Input({
             <Label width={width}>{label}</Label>
             <InputStayled
                 width={width}
+                placeholder={placeholder}
                 padding={padding}
                 type="text"
                 background={background}
