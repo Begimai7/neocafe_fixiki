@@ -9,6 +9,7 @@ export default function Modal({
     handleClose,
     borderRadius,
     width,
+    background,
 }) {
     const style = {
         position: 'absolute',
@@ -18,6 +19,7 @@ export default function Modal({
         bgcolor: 'background.paper',
         // border: '2px solid #000',
         borderRadius: borderRadius,
+        background: background,
         boxShadow: 24,
         width: width,
         p: 4,
