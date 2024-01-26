@@ -18,9 +18,10 @@ export default Button
 const UiButtonStyled = styled.button`
     border-color: ${(props) => props.borderColor || '0px'};
     border: ${(props) => props.border || '0px solid'};
-    background-color: ${(props) => props.backgroun || '#00315D'};
-    border-radius: ${(props) => props.borderRadius || '0px'};
+    background-color: ${(props) => props.background || '#00315D'};
+    border-radius: ${(props) => props.borderRadius || '6px'};
     padding: ${(props) => props.padding || '16px 70px'};
     color: ${(props) => props.color || '#00315D'};
     align-items: center;
+    cursor: pointer;
 `
