@@ -40,36 +40,36 @@ export const SelectData = [
     {
         id: 5,
         name: 'Чай',
-    }
-  ]
+    },
+]
 export const weekAddNewFilial = [
     {
         id: '1',
-        day: 'Понедельник'
+        day: 'Понедельник',
     },
     {
-        id: "2",
-        day: 'Вторник'
+        id: '2',
+        day: 'Вторник',
     },
     {
         id: '3',
-        day: 'Среда'
+        day: 'Среда',
     },
     {
         id: '4',
-        day: 'Четверг'
+        day: 'Четверг',
     },
     {
         id: '5',
-        day: 'Пятница'
+        day: 'Пятница',
     },
     {
         id: '6',
-        day: 'Суббота'
+        day: 'Суббота',
     },
     {
-        id: "7",
-        day: 'Воскресенье'
+        id: '7',
+        day: 'Воскресенье',
     },
 ]
 export const editSklad = [
@@ -84,5 +84,19 @@ export const editSklad = [
     {
         id: '3',
         name: 'Сырье',
+    },
+]
+export const skladTabsTitle = [
+    {
+        id: 1,
+        name: 'Готовая продукция',
+    },
+    {
+        id: 2,
+        name: 'Сырье',
+    },
+    {
+        id: 3,
+        name: 'Заканчивающиеся продукты',
     },
 ]
