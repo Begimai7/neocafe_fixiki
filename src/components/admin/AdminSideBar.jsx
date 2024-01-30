@@ -7,22 +7,26 @@ import Toolbar from '@mui/material/Toolbar'
 import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
 import ListItemText from '@mui/material/ListItemText'
-import exit from '../../assets/icon/exist.svg'
+import exit from '../../assets/icon/SignOut.svg'
 import { sidebarMenu } from '../../utils/constants'
 
 const drawerWidth = 202
 
 export default function SideBar({ existHandler }) {
+
+
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar
+            <AppBarStyle
                 position="fixed"
                 sx={{
                     width: `calc(100% - ${drawerWidth}px)`,
                     ml: `${drawerWidth}px`,
+                    background:'white'
                 }}
-            ></AppBar>
+            >
+            </AppBarStyle>
             <Drawer
                 sx={{
                     backgroundColor: 'red',
@@ -64,6 +68,9 @@ export default function SideBar({ existHandler }) {
     )
 }
 
+const AppBarStyle = styled(AppBar)`
+    box-shadow: none;
+`
 const SignOutDiv = styled('div')`
     display: flex;
     flex-direction: row;

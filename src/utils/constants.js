@@ -7,17 +7,17 @@ export const sidebarMenu = [
     {
         id: 2,
         name: 'Склад',
-        path: '/склад',
+        path: '/sklad',
     },
     {
         id: 1,
         name: 'Филиалы',
-        path: '/филиалы',
+        path: '/filial',
     },
     {
         id: 1,
         name: 'Сотрудники',
-        path: '/сотрудники',
+        path: '/sotrudniki',
     },
 ]
 

@@ -21,7 +21,7 @@ const UiButtonStyled = styled.button`
     background-color: ${(props) => props.background || '#00315D'};
     border-radius: ${(props) => props.borderRadius || '6px'};
     padding: ${(props) => props.padding || '16px 70px'};
-    color: ${(props) => props.color || '#00315D'};
+    color: ${(props) => props.color || 'white'};
     align-items: center;
     cursor: pointer;
 `
