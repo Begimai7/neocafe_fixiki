@@ -1,5 +1,4 @@
 import * as React from 'react'
-import clsx from 'clsx'
 import { styled, css } from '@mui/system'
 import Modal  from '../UI/Modal'
 import addFotoIcon from '../../assets/icon/addFoto.svg'
