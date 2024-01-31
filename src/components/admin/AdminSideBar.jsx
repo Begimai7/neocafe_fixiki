@@ -5,10 +5,10 @@ import CssBaseline from '@mui/material/CssBaseline'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import List from '@mui/material/List'
-import ListItem from '@mui/material/ListItem'
 import ListItemText from '@mui/material/ListItemText'
 import exit from '../../assets/icon/exist.svg'
 import { sidebarMenu } from '../../utils/constants'
+import { Link } from 'react-router-dom'
 
 const drawerWidth = 202
 
@@ -44,14 +44,20 @@ export default function SideBar({ existHandler }) {
                                 Aroma<LogotipeCafe>cafe</LogotipeCafe>
                             </LogotipeAroma>
                         </Toolbar>
-                        <List>
-                            {sidebarMenu.map((el) => (
-                                <ListItemStyled key={el.id} disablePadding>
+                        <List
+                            style={{ display: 'flex', flexDirection: 'column' }}
+                        >
+                           `` {sidebarMenu.map((el) => (
+                                <ListItemStyled
+                                    key={el.id}
+                                    disablePadding
+                                    to={el.path}
+                                >
                                     <ListItemButtonStyle>
                                         <ListItemTextStyle primary={el.name} />
                                     </ListItemButtonStyle>
                                 </ListItemStyled>
-                            ))}     
+                            ))}
                         </List>
                     </div>
                     <SignOutDiv onClick={existHandler}>
@@ -75,7 +81,7 @@ const SignOutDiv = styled('div')`
     cursor: pointer;
 `
 
-const ListItemStyled = styled(ListItem)(() => ({
+const ListItemStyled = styled(Link)(() => ({
     paddingLeft: '10px',
 }))
 
