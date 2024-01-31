@@ -318,3 +318,17 @@ export const editSklad = [
         name: 'Сырье',
     },
 ]
+export const skladTabsTitle = [
+    {
+        id: 1,
+        name: 'Готовая продукция',
+    },
+    {
+        id: 2,
+        name: 'Сырье',
+    },
+    {
+        id: 3,
+        name: 'Заканчивающиеся продукты',
+    },
+]
