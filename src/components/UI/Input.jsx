@@ -20,7 +20,7 @@ export default function Input({
                 borderRadius={borderRadius}
                 placeholder={placeholder}
                 padding={padding}
-                type='text'
+                type={type}
                 background={background}
             />
         </InputContainer>
