@@ -4,14 +4,13 @@ import Modal from '../UI/Modal'
 import Input from '../UI/Input'
 import Button from '../UI/Button'
 import IconX from '../../assets/icon/X.svg'
-function CreateNewCategory({open, handleClose, width) {
-
+function CreateNewCategory({ open, handleClose, width }) {
     return (
         <div width="100%">
             <Modal
                 open={open}
                 handleClose={handleClose}
-                width="30%"
+                width={width}
                 border="30px"
                 borderRadius={'30px'}
             >
@@ -19,7 +18,7 @@ function CreateNewCategory({open, handleClose, width) {
                     <BoxBlockStyle>
                         <TextHtwoStyle>Новая категория</TextHtwoStyle>
 
-                        <IconButton onClick={openCart}>
+                        <IconButton onClick={handleClose}>
                             <img src={IconX} alt="" />
                         </IconButton>
                     </BoxBlockStyle>

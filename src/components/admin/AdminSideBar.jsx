@@ -9,12 +9,11 @@ import ListItem from '@mui/material/ListItem'
 import ListItemText from '@mui/material/ListItemText'
 import exit from '../../assets/icon/SignOut.svg'
 import { sidebarMenu } from '../../utils/constants'
+import { Link } from 'react-router-dom'
 
 const drawerWidth = 202
 
 export default function SideBar({ existHandler }) {
-
-
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
@@ -23,10 +22,9 @@ export default function SideBar({ existHandler }) {
                 sx={{
                     width: `calc(100% - ${drawerWidth}px)`,
                     ml: `${drawerWidth}px`,
-                    background:'white'
+                    background: 'white',
                 }}
-            >
-            </AppBarStyle>
+            ></AppBarStyle>
             <Drawer
                 sx={{
                     backgroundColor: 'red',
@@ -48,15 +46,19 @@ export default function SideBar({ existHandler }) {
                                 Aroma<LogotipeCafe>cafe</LogotipeCafe>
                             </LogotipeAroma>
                         </Toolbar>
-                        <List>
+                        <ListStyled>
                             {sidebarMenu.map((el) => (
-                                <ListItemStyled key={el.id} disablePadding>
+                                <ListItemStyled
+                                    key={el.id}
+                                    disablePadding
+                                    to={el.path}
+                                >
                                     <ListItemButtonStyle>
                                         <ListItemTextStyle primary={el.name} />
                                     </ListItemButtonStyle>
                                 </ListItemStyled>
-                            ))}     
-                        </List>
+                            ))}
+                        </ListStyled>
                     </div>
                     <SignOutDiv onClick={existHandler}>
                         <span>Выход</span>
@@ -82,8 +84,12 @@ const SignOutDiv = styled('div')`
     cursor: pointer;
 `
 
-const ListItemStyled = styled(ListItem)(() => ({
+const ListItemStyled = styled(Link)(() => ({
     paddingLeft: '10px',
+}))
+const ListStyled = styled(List)(() => ({
+    display: 'flex',
+    flexDirection: 'column',
 }))
 
 const ListItemButtonStyle = styled('button')(() => ({

@@ -13,7 +13,7 @@ export const titlesMenuHeaderTable = [
         numeric: true,
         width: 10,
         align: 'right',
-           format: (value) => value.toLocaleString('en-US'),
+        format: (value) => value.toLocaleString('en-US'),
     },
     {
         id: 'three',
@@ -47,7 +47,6 @@ export const titlesMenuHeaderTable = [
         align: 'right',
         format: (value) => value.toLocaleString('en-US'),
     },
- 
 ]
 export const titlesSkladHeaderTable = [
     {
@@ -57,7 +56,7 @@ export const titlesSkladHeaderTable = [
         width: 5,
     },
     {
-        id:2,
+        id: 2,
         label: 'Наименование',
         numeric: true,
         width: 10,
@@ -86,7 +85,6 @@ export const titlesSkladHeaderTable = [
         numeric: true,
         width: 40,
     },
- 
 ]
 export const titlesFilialHeaderTable = [
     {
@@ -96,7 +94,7 @@ export const titlesFilialHeaderTable = [
         width: 5,
     },
     {
-        id:2,
+        id: 2,
         label: 'Название кофейни',
         numeric: true,
         width: 10,
@@ -119,7 +117,6 @@ export const titlesFilialHeaderTable = [
         numeric: true,
         width: 40,
     },
- 
 ]
 export const titlesEmplayeesHeaderTable = [
     {
@@ -129,7 +126,7 @@ export const titlesEmplayeesHeaderTable = [
         width: 5,
     },
     {
-        id:2,
+        id: 2,
         label: 'Имя',
         numeric: true,
         width: 10,
@@ -164,7 +161,6 @@ export const titlesEmplayeesHeaderTable = [
         numeric: true,
         width: 40,
     },
- 
 ]
 export const data = [
     {
@@ -172,35 +168,35 @@ export const data = [
         label: 'Капучино',
         category: 'Кофе',
         sostav: 'Молоко (70 мл), Кофе (15 зерен), Во...',
-        price: '100'
+        price: '100',
     },
     {
         id: 'two',
         label: 'Капучино',
         category: 'Кофе',
         sostav: 'Молоко (70 мл), Кофе (15 зерен), Во...',
-        price: '100'
+        price: '100',
     },
     {
         id: 'three',
         label: 'Капучино',
         category: 'Кофе',
         sostav: 'Молоко (70 мл), Кофе (15 зерен), Во...',
-        price: '100'
+        price: '100',
     },
     {
         id: 'four',
         label: 'Капучино',
         category: 'Кофе',
         sostav: 'Молоко (70 мл), Кофе (15 зерен), Во...',
-        price: '100'
+        price: '100',
     },
     {
         id: 'five',
         label: 'Капучино',
         category: 'Кофе',
         sostav: 'Молоко (70 мл), Кофе (15 зерен), Во...',
-        price: '100'
+        price: '100',
     },
     // {
     //     id: 6,
@@ -214,28 +210,27 @@ export const data = [
     //     numeric: true,
     //     width: 40,
     // },
- 
 ]
 export const sidebarMenu = [
     {
         id: 1,
         name: 'Меню',
-        path: '/menu',
+        path: 'menu',
     },
     {
         id: 2,
         name: 'Склад',
-        path: '/склад',
+        path: 'склад',
     },
     {
         id: 1,
         name: 'Филиалы',
-        path: '/филиалы',
+        path: 'филиалы',
     },
     {
         id: 1,
         name: 'Сотрудники',
-        path: '/сотрудники',
+        path: 'сотрудники',
     },
 ]
 export const tabTitle = [
@@ -272,36 +267,36 @@ export const SelectData = [
     {
         id: 5,
         name: 'Чай',
-    }
-  ]
+    },
+]
 export const weekAddNewFilial = [
     {
         id: '1',
-        day: 'Понедельник'
+        day: 'Понедельник',
     },
     {
-        id: "2",
-        day: 'Вторник'
+        id: '2',
+        day: 'Вторник',
     },
     {
         id: '3',
-        day: 'Среда'
+        day: 'Среда',
     },
     {
         id: '4',
-        day: 'Четверг'
+        day: 'Четверг',
     },
     {
         id: '5',
-        day: 'Пятница'
+        day: 'Пятница',
     },
     {
         id: '6',
-        day: 'Суббота'
+        day: 'Суббота',
     },
     {
-        id: "7",
-        day: 'Воскресенье'
+        id: '7',
+        day: 'Воскресенье',
     },
 ]
 export const editSklad = [

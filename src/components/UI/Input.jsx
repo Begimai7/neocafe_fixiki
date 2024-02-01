@@ -7,7 +7,9 @@ export default function Input({
     padding,
     label,
     type,
+    height,
     background,
+    borderRadius,
     marginBottom,
     placeholder,
 }) {
@@ -33,26 +35,24 @@ const InputContainer = styled('div')(({ width, marginBottom }) => ({
     width,
     marginBottom,
 }))
-const Label = styled('label')(({ width, padding }) => ({
+const Label = styled('label')(() => ({
     color: '#C1C1C3',
     fontFamily: 'Nunito Sans',
     fontSize: '16px',
     fontStyle: 'normal',
     fontWeight: '600',
     lineHeight: '100%',
-
 }))
-const InputStayled = styled(TextField)(({ width, padding, background,height, borderRadius}) => ({
+const InputStayled = styled(TextField)(({ background, borderRadius }) => ({
     borderRadius: borderRadius,
     backgroundColor: background,
 
     color: '#0000',
     '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': {
-        borderColor: 'transparent',        
+        borderColor: 'transparent',
     },
 
-    '.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root':{
-        height: '36px'
-    }
-
+    '.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root': {
+        height: '36px',
+    },
 }))
