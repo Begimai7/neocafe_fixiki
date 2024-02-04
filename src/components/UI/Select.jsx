@@ -4,7 +4,7 @@ import FormControl from '@mui/material/FormControl'
 import { Select as MuiSelect, styled } from '@mui/material'
 import { SelectData } from '../../utils/constants.js'
 
-export default function Select({ SelectData, labelText, width, marginBottom }) {
+export default function Select({  labelText, width, marginBottom }) {
     const [selectedCategory, setSelectedCategory] = useState('')
 
     const handleChange = (event) => {

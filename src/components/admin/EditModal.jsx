@@ -5,6 +5,7 @@ import styled from '@emotion/styled'
 import Button from '../UI/Button'
 import Input from '../UI/Input'
 import WorkingHours from '../UI/WorkingHours'
+import Select from '../UI/Select'
 
 
 
@@ -35,10 +36,20 @@ export default function EditModal(handleClose) {
                             </AddFotoFilialText>
                             <InputBlock>
                                 <Input
-                                    label="Номер телефона"
-                                    placeholder="Введите номер телефона"
+                                    label="Имя"
+                                    placeholder="Введите имя"
                                     background='EDEDED'
                                     width='487px'
+                                />
+                                <Select
+                                    labelText='Должность'
+                                />
+                                <Input
+                                    label="День рождения"
+                                    placeholder="Введите день рождения"
+                                    background='EDEDED'
+                                    width='487px'
+                                    type='date'
                                 />
                                 <Input
                                     label="Номер телефона"
@@ -46,22 +57,8 @@ export default function EditModal(handleClose) {
                                     background='EDEDED'
                                     width='487px'
                                 />
-                                <Input
-                                    label="Номер телефона"
-                                    placeholder="Введите номер телефона"
-                                    background='EDEDED'
-                                    width='487px'
-                                />
-                                <Input
-                                    label="Номер телефона"
-                                    placeholder="Введите номер телефона"
-                                    background='EDEDED'
-                                    width='487px'
-                                />
-                                <Input
-                                    label="Номер телефона"
-                                    placeholder="Введите номер телефона"
-                                    background='EDEDED'
+                                <Select
+                                    labelText="Филиал"
                                     width='487px'
                                 />
                             </InputBlock>
