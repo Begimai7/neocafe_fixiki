@@ -7,7 +7,7 @@ import Input from '../UI/Input'
 import WorkingHours from '../UI/WorkingHours'
 import Select from '../UI/Select'
 
-export default function EditModal(handleClose) {
+export default function CreateNewEmpleyee(handleClose) {
     return (
         <Modal
             open={open}

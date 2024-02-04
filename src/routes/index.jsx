@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import AdminLayout from "../layout/AdminLayout";
-import EditModal from "../components/admin/EditModal";
+import CreateNewEmpleyee from "../components/admin/CreateNewEmpleyee";
 
 export const router = createBrowserRouter([
         {
@@ -9,7 +9,7 @@ export const router = createBrowserRouter([
       children: [
         {
           path: "menu",
-          element:  <EditModal/>
+          element:  <CreateNewEmpleyee/>
         },
         
       ],
