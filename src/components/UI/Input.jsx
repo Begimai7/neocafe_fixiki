@@ -4,10 +4,12 @@ import TextField from '@mui/material/TextField'
 
 export default function Input({
     width,
+    height,
     padding,
     label,
     type,
     background,
+    borderRadius,
     marginBottom,
     placeholder,
 }) {
@@ -33,7 +35,7 @@ const InputContainer = styled('div')(({ width, marginBottom }) => ({
     width,
     marginBottom,
 }))
-const Label = styled('label')(({ width, padding }) => ({
+const Label = styled('label')(() => ({
     color: '#C1C1C3',
     fontFamily: 'Nunito Sans',
     fontSize: '16px',
@@ -42,8 +44,8 @@ const Label = styled('label')(({ width, padding }) => ({
     lineHeight: '100%',
 
 }))
-const InputStayled = styled(TextField)(({ width, padding, background,height, borderRadius}) => ({
-    borderRadius: borderRadius,
+const InputStayled = styled(TextField)(({ background, borderRadius, height}) => ({
+    borderRadius,
     backgroundColor: background,
 
     color: '#0000',
@@ -52,7 +54,7 @@ const InputStayled = styled(TextField)(({ width, padding, background,height, bor
     },
 
     '.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root':{
-        height: '36px'
+        height: height
     }
 
 }))

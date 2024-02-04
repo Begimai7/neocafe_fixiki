@@ -25,14 +25,14 @@ export default function Table({
   };
 
   return (
-    <Paper sx={{ width: '80%', overflow: 'hidden' }}>
+    <Paper sx={{ width: '100%', overflow: 'hidden' }}>
       <TableContainer sx={{ maxHeight: 440 }}>
         <MuiTable stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
               {headerTable.map((column) => (
                 <TableCell
-                  key={column.id}
+                  key={column.z}
                 >
                   {column.label}
                 </TableCell>

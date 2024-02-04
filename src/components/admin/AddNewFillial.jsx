@@ -3,9 +3,9 @@ import { styled, css } from '@mui/system'
 import Modal  from '../UI/Modal'
 import addFotoIcon from '../../assets/icon/addFoto.svg'
 import Input from '../UI/Input'
-import cancelIcon from '../../assets/icon/cancel.svg'
+import cancelIcon from '../../assets/icon/cansel.svg'
 import Button from '../UI/Button'
-import { weekAddNewFilial } from '../../utils/constants/'
+import WorkingHours from '../UI/WorkingHours'
 
 export default function ModalUnstyled({ handleClose }) {
     const [selectedPhoto, setSelectedPhoto] = React.useState(null)
@@ -32,12 +32,7 @@ export default function ModalUnstyled({ handleClose }) {
             reader.readAsDataURL(file)
         }
     }
-    const checkedHandler = (id) => {
-        setIsCheckboxChecked((prevState) => ({
-          ...prevState,
-          [id]: !prevState[id],
-        }));
-      };
+
     return (
         <div>
             <Modal
@@ -104,14 +99,19 @@ export default function ModalUnstyled({ handleClose }) {
                         <Input
                             label="Название кофейни"
                             placeholder="Название филиала"
+                            background='EDEDED'
                         />
                         <Input
                             label="Адрес"
                             placeholder="Адрес нового филиала"
+                            background='EDEDED'
+
                         />
                         <Input
                             label="Номер телефона"
                             placeholder="Введите номер телефона"
+                            background='EDEDED'
+                            
                         />
                     </InputsBlock>
 
@@ -126,36 +126,10 @@ export default function ModalUnstyled({ handleClose }) {
                             Время работы
                         </GraphicksText>
                     </WorkGraficksText>
-                            {weekAddNewFilial.map((el) => (
-                    <div style={{ width: '100%' }}>
-                        <WeekWorksGraphicks key={el.id}>
-                                <DayInTheWeek>{el.day}</DayInTheWeek>
-                                <GraphicksWorkCheckBox
-                                    type="checkbox"
-                                    checked={isCheckboxChecked[el.id]}
-                                    onChange={() =>
-                                        checkedHandler(el.id)
-                                    }
-                                />
-                                <GraphicksWorkInputDiv>
-                                    <GraphicksWorkInput
-                                        htmlFor={el.id}
-                                        type="time"
-                                        disabled={!isCheckboxChecked[el.id]}
-                                    />
-                                    <span>-</span>
-                                    <GraphicksWorkInput
-                                        type="time"
-                                        htmlFor={el.id}
-                                        disabled={!isCheckboxChecked[el.id]}
-                                    />
-                                </GraphicksWorkInputDiv>
-                        </WeekWorksGraphicks>
-                    </div>
-                            ))}
+                            <WorkingHours/>
 
-                    <ModalButtonDiv>
-                        <Button background='white' border='1px solid'>Отмена</Button>
+                    <ModalButtonDiv   >
+                        <Button background='white' border='1px solid' color='#00315D'>Отмена</Button>
                         <Button color="white" >Сохранить</Button>
                     </ModalButtonDiv>
                 </ModalContent>
@@ -180,43 +154,14 @@ const ModalButtonDiv = styled('div')(() => ({
 const ModalContent = styled('div')(() => ({
     height: '800px',
     overflowX: 'scroll',
-    fontFamily:'Nunito Sans',
+    fontFamily:'sans-serif',
     '&::-webkit-scrollbar': {
         display: 'none',
     }
     
 }))
-const GraphicksWorkInputDiv = styled('div')(() => ({
-    width:'199px',
-    display:'flex',
-    flexDirection:'row',
-    justifyContent:'space-between',
-    alignItems:'center'
-}))
-const GraphicksWorkCheckBox = styled('input')(() => ({
-    width:'22px',
-    height:'22px',
-    borderRadius:'4px'
-}))
-const GraphicksWorkInput = styled('input')(() => ({
-    width: '85px',
-    height:'36px',
-    overflow:"hidden"
-}))
-const DayInTheWeek = styled('span')(() => ({
-    width: '125px',
-    fontSize:'20px',
-    fontStyle:'normal',
-    fontWeight:'600',
-}))
-const WeekWorksGraphicks = styled('div')(() => ({
-    width: '100%',
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems:'center',
-    justifyContent: 'space-between',
-    marginTop:'16px'
-}))
+
+
 const GraphicksText = styled('span')(() => ({
     fontSize: '18px',
     fontStyle: 'normal',

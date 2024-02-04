@@ -220,22 +220,22 @@ export const sidebarMenu = [
     {
         id: 1,
         name: 'Меню',
-        path: '/menu',
+        path: 'menu',
     },
     {
         id: 2,
         name: 'Склад',
-        path: '/склад',
+        path: 'склад',
     },
     {
         id: 1,
         name: 'Филиалы',
-        path: '/филиалы',
+        path: 'филиалы',
     },
     {
         id: 1,
         name: 'Сотрудники',
-        path: '/сотрудники',
+        path: 'сотрудники',
     },
 ]
 export const tabTitle = [

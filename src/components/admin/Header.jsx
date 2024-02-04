@@ -8,20 +8,20 @@ import Button from '../UI/Button';
 function Header() {
  const {pathname} = window.location
 
-// let title = ''
+let title = ''
 
-// if(pathname === '/menu'){
-//    return title = 'Меню'
-// }
-// if(pathname === '/sklad'){
-//     return title = 'Склад'
-// }
-// if(pathname === '/filial'){
-//     return title = 'Филиалы'
-// }
-// if(pathname === '/sotrudniki'){
-//    title = 'Сотрудники'
-// }
+if(pathname === '/menu'){
+   return title = 'Меню'
+}
+if(pathname === '/sklad'){
+    return title = 'Склад'
+}
+if(pathname === '/filial'){
+    return title = 'Филиалы'
+}
+if(pathname === '/sotrudniki'){
+   title = 'Сотрудники'
+}
 
   return (
     <header style={{height:'140px'}}>
@@ -40,6 +40,7 @@ function Header() {
 }
 
 export default Header
+
 
 
 const BellSimpleButton = styled.div`
@@ -69,7 +70,6 @@ const HeaderTitle = styled.h2`
     color: var(--black, #171717);
     font-family: 'Nunito Sans';
     font-size: 48px;
-    font-style: normal;
-    line-height: 120%;
+    line-height: 120%;  
     font-weight: 600;
 ` 
