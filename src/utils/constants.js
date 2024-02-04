@@ -1,9 +1,14 @@
+export const ROLES = {
+    ADMIN: 'ADMIN',
+    BARISTA: 'BARISTA',
+}
+
 export const titlesMenuHeaderTable = [
     {
         id: 'one',
         label: '№',
         numeric: true,
-        width: 5,
+        // minWidth: 5,
         align: 'right',
         format: (value) => value.toLocaleString('en-US'),
     },
@@ -11,7 +16,7 @@ export const titlesMenuHeaderTable = [
         id: 'two',
         label: 'Наименование',
         numeric: true,
-        width: 10,
+        // minWidth: 10,
         align: 'right',
         format: (value) => value.toLocaleString('en-US'),
     },
@@ -19,7 +24,7 @@ export const titlesMenuHeaderTable = [
         id: 'three',
         label: 'Категория',
         numeric: true,
-        width: 30,
+        // width: 30,
         align: 'right',
         format: (value) => value.toLocaleString('en-US'),
     },
@@ -27,7 +32,7 @@ export const titlesMenuHeaderTable = [
         id: 'four',
         label: 'Состав блюда и граммовка',
         numeric: true,
-        width: 40,
+        // width: 40,
         align: 'right',
         format: (value) => value.toLocaleString('en-US'),
     },
@@ -35,7 +40,7 @@ export const titlesMenuHeaderTable = [
         id: 'five',
         label: 'Стоимость',
         numeric: true,
-        width: 40,
+        // width: 40,
         align: 'right',
         format: (value) => value.toLocaleString('en-US'),
     },
@@ -43,44 +48,44 @@ export const titlesMenuHeaderTable = [
         id: 'six',
         label: 'Ред.',
         numeric: true,
-        width: 40,
+        // width: 40,
         align: 'right',
         format: (value) => value.toLocaleString('en-US'),
     },
 ]
 export const titlesSkladHeaderTable = [
     {
-        id: 1,
+        id: 'one',
         label: '№',
         numeric: true,
         width: 5,
     },
     {
-        id: 2,
+        id: 'two',
         label: 'Наименование',
         numeric: true,
         width: 10,
     },
     {
-        id: 3,
+        id: 'three',
         label: 'Количество',
         numeric: true,
         width: 30,
     },
     {
-        id: 4,
+        id: 'four',
         label: 'Лимит',
         numeric: true,
         width: 40,
     },
     {
-        id: 5,
+        id: 'five',
         label: 'Дата прихода',
         numeric: true,
         width: 40,
     },
     {
-        id: 6,
+        id: 'six',
         label: 'Ред.',
         numeric: true,
         width: 40,
@@ -88,31 +93,31 @@ export const titlesSkladHeaderTable = [
 ]
 export const titlesFilialHeaderTable = [
     {
-        id: 1,
+        id: 'one',
         label: '№',
         numeric: true,
         width: 5,
     },
     {
-        id: 2,
+        id: 'two',
         label: 'Название кофейни',
         numeric: true,
         width: 10,
     },
     {
-        id: 3,
+        id: 'three',
         label: 'Адрес',
         numeric: true,
         width: 30,
     },
     {
-        id: 4,
+        id: 'four',
         label: 'Время работы',
         numeric: true,
         width: 40,
     },
     {
-        id: 5,
+        id: 'five',
         label: 'Ред.',
         numeric: true,
         width: 40,
@@ -120,97 +125,49 @@ export const titlesFilialHeaderTable = [
 ]
 export const titlesEmplayeesHeaderTable = [
     {
-        id: 1,
+        id: 'one',
         label: '№',
         numeric: true,
         width: 5,
     },
     {
-        id: 2,
+        id: 'two',
         label: 'Имя',
         numeric: true,
         width: 10,
     },
     {
-        id: 3,
+        id: 'three',
         label: 'Должность',
         numeric: true,
         width: 30,
     },
     {
-        id: 4,
+        id: 'four',
         label: 'Выберите филиал',
         numeric: true,
         width: 40,
     },
     {
-        id: 5,
+        id: 'five',
         label: 'Телефон',
         numeric: true,
         width: 40,
     },
     {
-        id: 6,
+        id: 'six',
         label: 'График работы',
         numeric: true,
         width: 40,
     },
     {
-        id: 7,
+        id: 'seven',
         label: 'Ред.',
         numeric: true,
         width: 40,
     },
 ]
-export const data = [
-    {
-        id: 'one',
-        label: 'Капучино',
-        category: 'Кофе',
-        sostav: 'Молоко (70 мл), Кофе (15 зерен), Во...',
-        price: '100',
-    },
-    {
-        id: 'two',
-        label: 'Капучино',
-        category: 'Кофе',
-        sostav: 'Молоко (70 мл), Кофе (15 зерен), Во...',
-        price: '100',
-    },
-    {
-        id: 'three',
-        label: 'Капучино',
-        category: 'Кофе',
-        sostav: 'Молоко (70 мл), Кофе (15 зерен), Во...',
-        price: '100',
-    },
-    {
-        id: 'four',
-        label: 'Капучино',
-        category: 'Кофе',
-        sostav: 'Молоко (70 мл), Кофе (15 зерен), Во...',
-        price: '100',
-    },
-    {
-        id: 'five',
-        label: 'Капучино',
-        category: 'Кофе',
-        sostav: 'Молоко (70 мл), Кофе (15 зерен), Во...',
-        price: '100',
-    },
-    // {
-    //     id: 6,
-    //     label: 'График работы',
-    //     numeric: true,
-    //     width: 40,
-    // },
-    // {
-    //     id: 7,
-    //     label: 'Ред.',
-    //     numeric: true,
-    //     width: 40,
-    // },
-]
+
 export const sidebarMenu = [
     {
         id: 1,
@@ -220,17 +177,17 @@ export const sidebarMenu = [
     {
         id: 2,
         name: 'Склад',
-        path: 'склад',
+        path: 'sklad',
     },
     {
         id: 1,
         name: 'Филиалы',
-        path: 'филиалы',
+        path: 'branches',
     },
     {
         id: 1,
         name: 'Сотрудники',
-        path: 'сотрудники',
+        path: 'emplyees',
     },
 ]
 export const tabTitle = [

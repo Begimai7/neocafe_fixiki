@@ -2,28 +2,39 @@ import { createBrowserRouter } from 'react-router-dom'
 import { AdminLayout } from '../layout/AdminLayout'
 import { Menu } from '../pages/menu/Menu'
 import { Sklad } from '../pages/sklad/Sklad'
+import { Branch } from '../pages/branch/Branch'
+import { Employees } from '../pages/employees/Employees'
+import ProtectRoute from './protect-route'
+import { ROLES } from '../utils/constants'
+import { BaristaLayout } from '../layout/BaristaLayout'
 
 export const router = createBrowserRouter([
     {
         path: '/admin',
-        element: <AdminLayout />,
+
+        element: <ProtectRoute component={AdminLayout} roles={ROLES.ADMIN} />,
         children: [
             {
                 path: 'menu',
                 element: <Menu />,
             },
             {
-                path: 'склад',
+                path: 'sklad',
                 element: <Sklad />,
             },
             {
-                path: 'филиалы',
-                element: <Menu />,
+                path: 'branches',
+                element: <Branch />,
             },
             {
-                path: 'сотрудники',
-                element: <Menu />,
+                path: 'emplyees',
+                element: <Employees />,
             },
         ],
+    },
+    {
+        path: '/barista',
+        element: <BaristaLayout />,
+        children: [{}],
     },
 ])

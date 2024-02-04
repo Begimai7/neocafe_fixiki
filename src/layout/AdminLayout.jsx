@@ -8,8 +8,7 @@ export const AdminLayout = () => {
         <AdminLayoutContainer>
             <SideBar />
 
-            <div>
-                <p>Nurles components</p>
+            <div style={{ width: '90vw' }}>
                 <Outlet />
             </div>
         </AdminLayoutContainer>
@@ -18,4 +17,5 @@ export const AdminLayout = () => {
 
 const AdminLayoutContainer = styled('div')(() => ({
     display: 'flex',
+    width: '100vw',
 }))
