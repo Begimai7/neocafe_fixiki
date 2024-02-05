@@ -88,6 +88,7 @@ const ModalButtonDiv = styled('div')(() => ({
     marginTop: '30px',
 }))
 
+
 const InputBlock = styled('div')(() => ({
     height: '514px',
     display: 'flex',

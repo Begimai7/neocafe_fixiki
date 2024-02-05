@@ -2,6 +2,7 @@ import * as React from 'react'
 import { Box, styled } from '@mui/material'
 import TextField from '@mui/material/TextField'
 
+
 export default function Input({
     width,
     height,
@@ -45,19 +46,20 @@ const Label = styled('label')(() => ({
     fontStyle: 'normal',
     fontWeight: '600',
     lineHeight: '100%',
-
 }))
-const InputStayled = styled(TextField)(({ background, borderRadius, height}) => ({
-    borderRadius,
-    backgroundColor: background,
+const InputStayled = styled(TextField)(
+    ({ background, borderRadius, height }) => ({
+        borderRadius,
+        backgroundColor: background,
 
-    color: '#0000',
-    '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': {
-        borderColor: 'transparent',        
-    },
+        color: '#0000',
+        '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline':
+            {
+                borderColor: 'transparent',
+            },
 
-    '.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root':{
-        height: height
-    }
-
-}))
+        '.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root': {
+            height: height,
+        },
+    }),
+)
