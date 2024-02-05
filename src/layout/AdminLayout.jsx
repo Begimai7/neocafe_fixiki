@@ -1,18 +1,21 @@
 import React from 'react'
 import SideBar from '../components/admin/AdminSideBar'
-import Header from '../components/admin/Header'
-import { Outlet } from 'react-router'
+import { styled } from '@mui/material'
+import { Outlet } from 'react-router-dom'
 
-const AdminLayout = () => {
-  return (
-    <div style={{width: '100vw', display: 'flex'}}>
-      <SideBar />
-      <div style={{width: '86vw'}}>
-        <Header />
-        <Outlet/>
-      </div>
-    </div>
-  )
+export const AdminLayout = () => {
+    return (
+        <AdminLayoutContainer>
+            <SideBar />
+
+            <div style={{ width: '90vw' }}>
+                <Outlet />
+            </div>
+        </AdminLayoutContainer>
+    )
 }
 
-export default AdminLayout
+const AdminLayoutContainer = styled('div')(() => ({
+    display: 'flex',
+    width: '100vw',
+}))

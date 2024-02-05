@@ -34,6 +34,9 @@ const InputContainer = styled('div')(({ width, marginBottom }) => ({
     flexDirection: 'column',
     width,
     marginBottom,
+    '.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root ': {
+        borderRadius: '10px',
+    },
 }))
 const Label = styled('label')(() => ({
     color: '#C1C1C3',
