@@ -3,6 +3,8 @@ import { TableCard, createData } from '../../components/admin/Table/TableCard'
 import { tabTitle, titlesSkladHeaderTable } from '../../utils/constants'
 import AdminTabs from '../../components/UI/Tabs'
 import Navbar from '../../components/admin/Navbar'
+import { EditSkladModal } from '../../components/admin/EditSkladModal'
+import { useSearchParams } from 'react-router-dom'
 
 const dataS = [
     {
@@ -53,9 +55,18 @@ export const Sklad = () => {
     const rows = dataS.map((el) =>
         createData(el.id, el.name, el.quality, el.limit, el.data),
     )
+    const [newParams, setNewParams] = useSearchParams()
+    const openChangeHandler = () => {
+        setNewParams({ ...newParams, 'create-branch-sclad': 'true' })
+    }
+    const open = newParams.has('create-branch-sclad')
+    const delHandel = () => {
+        setNewParams(newParams.delete('create-branch-sclad'))
+    }
     return (
         <div>
-            <Navbar />
+            <EditSkladModal open={open} handleClose={delHandel} />
+            <Navbar openChangeHandler={openChangeHandler} />
             <AdminTabs tabTitle={tabTitle}>
                 <TableCard
                     headerTable={titlesSkladHeaderTable}

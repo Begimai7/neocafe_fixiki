@@ -40,7 +40,10 @@ function Navbar({ openChangeHandler }) {
                     width="86%"
                     type="search"
                 />
-                <Button padding="10px 47px" onClick={openChangeHandler}>
+                <Button
+                    padding="10px 47px"
+                    onClick={(openChangeHandler)}
+                >
                     Создать
                 </Button>
             </SearchDivStyle>
