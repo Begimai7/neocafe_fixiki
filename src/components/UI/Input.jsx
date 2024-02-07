@@ -10,10 +10,13 @@ export default function Input({
     background,
     marginBottom,
     placeholder,
+    textAlign,
 }) {
     return (
         <InputContainer width={width} marginBottom={marginBottom}>
-            <Label width={width}>{label}</Label>
+            <Label width={width} textAlign={textAlign}>
+                {label}
+            </Label>
             <InputStayled
                 width={width}
                 placeholder={placeholder}
@@ -35,19 +38,24 @@ const InputContainer = styled('div')(({ width, marginBottom }) => ({
         borderRadius: '10px',
     },
 }))
-const Label = styled('label')(() => ({
+const Label = styled('label')(({ textAlign }) => ({
     color: '#C1C1C3',
     fontFamily: 'Nunito Sans',
     fontSize: '16px',
     fontStyle: 'normal',
     fontWeight: '600',
     lineHeight: '100%',
+    textAlign,
 }))
-const InputStayled = styled(TextField)(({ background }) => ({
+const InputStayled = styled(TextField)(({ background, padding }) => ({
     borderRadius: '10px',
     backgroundColor: background,
     color: '#0000',
+    // padding,
     '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': {
         borderColor: 'transparent',
+    },
+    '.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root': {
+        padding: padding,
     },
 }))
