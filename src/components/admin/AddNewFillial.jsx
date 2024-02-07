@@ -3,9 +3,9 @@ import { styled, css } from '@mui/system'
 import Modal  from '../UI/Modal'
 import addFotoIcon from '../../assets/icon/addFoto.svg'
 import Input from '../UI/Input'
-import cancelIcon from '../../assets/icon/cancel.svg'
+import cancelIcon from '../../assets/icon/cansel.svg'
 import Button from '../UI/Button'
-import { weekAddNewFilial } from '../../utils/constants/'
+import WorkingHours from '../UI/WorkingHours'
 
 export default function CreateNewBranch({ open, handleClose }) {
     const [selectedPhoto, setSelectedPhoto] = React.useState(null)
@@ -32,6 +32,7 @@ export default function CreateNewBranch({ open, handleClose }) {
             reader.readAsDataURL(file)
         }
     }
+
     const checkedHandler = (id) => {
         setIsCheckboxChecked((prevState) => ({
             ...prevState,
@@ -101,14 +102,19 @@ export default function CreateNewBranch({ open, handleClose }) {
                         <Input
                             label="Название кофейни"
                             placeholder="Название филиала"
+                            background='EDEDED'
                         />
                         <Input
                             label="Адрес"
                             placeholder="Адрес нового филиала"
+                            background='EDEDED'
+
                         />
                         <Input
                             label="Номер телефона"
                             placeholder="Введите номер телефона"
+                            background='EDEDED'
+                            
                         />
                     </InputsBlock>
 
@@ -123,42 +129,10 @@ export default function CreateNewBranch({ open, handleClose }) {
                             Время работы
                         </GraphicksText>
                     </WorkGraficksText>
-                    {weekAddNewFilial.map((el) => (
-                        <div style={{ width: '100%' }}>
-                            <WeekWorksGraphicks key={el.id}>
-                                <DayInTheWeek>{el.day}</DayInTheWeek>
-                                <GraphicksWorkCheckBox
-                                    type="checkbox"
-                                    checked={isCheckboxChecked[el.id]}
-                                    onChange={() => checkedHandler(el.id)}
-                                />
-                                <GraphicksWorkInputDiv>
-                                    <GraphicksWorkInput
-                                        htmlFor={el.id}
-                                        type="time"
-                                        disabled={!isCheckboxChecked[el.id]}
-                                    />
-                                    <span>-</span>
-                                    <GraphicksWorkInput
-                                        type="time"
-                                        htmlFor={el.id}
-                                        disabled={!isCheckboxChecked[el.id]}
-                                    />
-                                </GraphicksWorkInputDiv>
-                            </WeekWorksGraphicks>
-                        </div>
-                    ))}
-
+                            <WorkingHours/>
                     <ModalButtonDiv>
-                        <Button
-                            background="white"
-                            border="1px solid #00315D"
-                            color="#00315D"
-                            onClick={handleClose}
-                        >
-                            Отмена
-                        </Button>
-                        <Button color="white">Сохранить</Button>
+                        <Button background='white' border='1px solid' color='#00315D'>Отмена</Button>
+                        <Button color="white" >Сохранить</Button>
                     </ModalButtonDiv>
                 </ModalContent>
             </Modal>
@@ -206,6 +180,8 @@ const DayInTheWeek = styled('span')(() => ({
     fontStyle: 'normal',
     fontWeight: '600',
 }))
+
+
 const WeekWorksGraphicks = styled('div')(() => ({
     width: '100%',
     display: 'flex',

@@ -21,15 +21,13 @@ export default function SideBar({ existHandler }) {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBarStyle
+            <AppBar
                 position="fixed"
                 sx={{
                     width: `calc(100% - ${drawerWidth}px)`,
                     ml: `${drawerWidth}px`,
-                    background:'white'
                 }}
-            >
-            </AppBarStyle>
+            ></AppBar>
             <Drawer
                 sx={{
                     backgroundColor: 'red',
@@ -51,15 +49,9 @@ export default function SideBar({ existHandler }) {
                                 Aroma<LogotipeCafe>cafe</LogotipeCafe>
                             </LogotipeAroma>
                         </Toolbar>
-                        <List
-                            style={{ display: 'flex', flexDirection: 'column' }}
-                        >
+                        <ListStyled>
                             {sidebarMenu.map((el) => (
-                                <ListItemStyled
-                                    key={el.id}
-                                    disablePadding
-                                    to={el.path}
-                                >
+                                <ListItemStyled key={el.id} disablePadding to={el.path}>
                                     <ListItemButtonStyle>
                                         <ListItemTextStyle
                                             primary={el.name}
@@ -73,8 +65,8 @@ export default function SideBar({ existHandler }) {
                                         />
                                     </ListItemButtonStyle>
                                 </ListItemStyled>
-                            ))}
-                        </List>
+                            ))}     
+                        </ListStyled>
                     </div>
                     <SignOutDiv onClick={existHandler}>
                         <span>Выход</span>
@@ -86,9 +78,6 @@ export default function SideBar({ existHandler }) {
     )
 }
 
-const AppBarStyle = styled(AppBar)`
-    box-shadow: none;
-`
 const SignOutDiv = styled('div')`
     display: flex;
     flex-direction: row;
@@ -103,6 +92,10 @@ const SignOutDiv = styled('div')`
 const ListItemStyled = styled(Link)(({ active }) => ({
     paddingLeft: '10px',
     // borderBottom: active === 'true' ? '2px solid #7f48af' : 'none',
+}))
+const ListStyled = styled(List)(() => ({
+    display:'flex',
+    flexDirection:'column'
 }))
 
 const ListItemButtonStyle = styled('button')(() => ({
