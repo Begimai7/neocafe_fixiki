@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { styled } from '@mui/system'
-import Modal from '../UI/Modal'
+import { styled, css } from '@mui/system'
+import Modal  from '../UI/Modal'
 import addFotoIcon from '../../assets/icon/addFoto.svg'
 import Input from '../UI/Input'
 import cancelIcon from '../../assets/icon/cancel.svg'

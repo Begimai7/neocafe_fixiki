@@ -15,7 +15,9 @@ export default function Input({
         <InputContainer width={width} marginBottom={marginBottom}>
             <Label width={width}>{label}</Label>
             <InputStayled
+                height={height}
                 width={width}
+                borderRadius={borderRadius}
                 placeholder={placeholder}
                 padding={padding}
                 type={type}
@@ -29,7 +31,6 @@ const InputContainer = styled('div')(({ width, marginBottom }) => ({
     display: 'flex',
     flexDirection: 'column',
     width,
-    gap: '8px',
     marginBottom,
     '.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root ': {
         borderRadius: '10px',
@@ -42,6 +43,7 @@ const Label = styled('label')(() => ({
     fontStyle: 'normal',
     fontWeight: '600',
     lineHeight: '100%',
+
 }))
 const InputStayled = styled(TextField)(({ background }) => ({
     borderRadius: '10px',
