@@ -32,6 +32,13 @@ export default function CreateNewBranch({ open, handleClose }) {
             reader.readAsDataURL(file)
         }
     }
+
+    const checkedHandler = (id) => {
+        setIsCheckboxChecked((prevState) => ({
+            ...prevState,
+            [id]: !prevState[id],
+        }))
+    }
     return (
         <div>
             <Modal open={open} handleClose={handleClose} borderRadius="16px">
@@ -123,10 +130,9 @@ export default function CreateNewBranch({ open, handleClose }) {
                         </GraphicksText>
                     </WorkGraficksText>
                             <WorkingHours/>
-                    <ModalButtonDiv   >
+                    <ModalButtonDiv>
                         <Button background='white' border='1px solid' color='#00315D'>Отмена</Button>
                         <Button color="white" >Сохранить</Button>
-
                     </ModalButtonDiv>
                 </ModalContent>
             </Modal>
@@ -146,6 +152,33 @@ const ModalButtonDiv = styled('div')(() => ({
 const ModalContent = styled('div')(({ height }) => ({
     height: `${(height * 80) / 100}px `,
     overflowX: 'scroll',
+    fontFamily: 'Nunito Sans',
+    '&::-webkit-scrollbar': {
+        display: 'none',
+    },
+}))
+const GraphicksWorkInputDiv = styled('div')(() => ({
+    width: '199px',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+}))
+const GraphicksWorkCheckBox = styled('input')(() => ({
+    width: '22px',
+    height: '22px',
+    borderRadius: '4px',
+}))
+const GraphicksWorkInput = styled('input')(() => ({
+    width: '85px',
+    height: '36px',
+    overflow: 'hidden',
+}))
+const DayInTheWeek = styled('span')(() => ({
+    width: '125px',
+    fontSize: '20px',
+    fontStyle: 'normal',
+    fontWeight: '600',
 }))
 
 

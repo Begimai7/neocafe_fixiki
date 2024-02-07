@@ -47,6 +47,7 @@ const Label = styled('label')(() => ({
     fontWeight: '600',
     lineHeight: '100%',
 }))
+
 const InputStayled = styled(TextField)(
     ({ background, borderRadius, height }) => ({
         borderRadius,
