@@ -7,18 +7,18 @@ import cancelIcon from '../../assets/icon/cancel.svg'
 import Button from '../UI/Button'
 import { weekAddNewFilial } from '../../utils/constants/'
 
-export default function ModalUnstyled({ handleClose }) {
+export default function CreateNewBranch({ open, handleClose }) {
     const [selectedPhoto, setSelectedPhoto] = React.useState(null)
+    const height = window.innerHeight
     const [isCheckboxChecked, setIsCheckboxChecked] = React.useState({
-        1: false, 
-        2: false, 
+        1: false,
+        2: false,
         3: false,
-        4: false, 
-        5: false, 
+        4: false,
+        5: false,
         6: false,
-        7: false
-      });
-    
+        7: false,
+    })
 
     const handleFileChange = (event) => {
         const file = event.target.files[0]
@@ -34,19 +34,14 @@ export default function ModalUnstyled({ handleClose }) {
     }
     const checkedHandler = (id) => {
         setIsCheckboxChecked((prevState) => ({
-          ...prevState,
-          [id]: !prevState[id],
-        }));
-      };
+            ...prevState,
+            [id]: !prevState[id],
+        }))
+    }
     return (
         <div>
-            <Modal
-                open={open}
-                handleClose={handleClose}
-                width={'551px'}
-                borderRadius='30px'
-            >
-                <ModalContent>
+            <Modal open={open} handleClose={handleClose} borderRadius="16px">
+                <ModalContent height={height}>
                     <ModalHeader style={{ width: '100%' }}>
                         <GlobalText id="unstyled-modal-title">
                             Новый филиал
@@ -78,7 +73,9 @@ export default function ModalUnstyled({ handleClose }) {
                                     <AddImgTextSpan>
                                         Перетащите изображение для изменения
                                     </AddImgTextSpan>
-                                    <AddImgTextSpan>или <AddNewImgText htmlFor="file-input">
+                                    <AddImgTextSpan>
+                                        или{' '}
+                                        <AddNewImgText htmlFor="file-input">
                                             обзор
                                         </AddNewImgText>
                                         <input
@@ -126,16 +123,14 @@ export default function ModalUnstyled({ handleClose }) {
                             Время работы
                         </GraphicksText>
                     </WorkGraficksText>
-                            {weekAddNewFilial.map((el) => (
-                    <div style={{ width: '100%' }}>
-                        <WeekWorksGraphicks key={el.id}>
+                    {weekAddNewFilial.map((el) => (
+                        <div style={{ width: '100%' }}>
+                            <WeekWorksGraphicks key={el.id}>
                                 <DayInTheWeek>{el.day}</DayInTheWeek>
                                 <GraphicksWorkCheckBox
                                     type="checkbox"
                                     checked={isCheckboxChecked[el.id]}
-                                    onChange={() =>
-                                        checkedHandler(el.id)
-                                    }
+                                    onChange={() => checkedHandler(el.id)}
                                 />
                                 <GraphicksWorkInputDiv>
                                     <GraphicksWorkInput
@@ -150,13 +145,20 @@ export default function ModalUnstyled({ handleClose }) {
                                         disabled={!isCheckboxChecked[el.id]}
                                     />
                                 </GraphicksWorkInputDiv>
-                        </WeekWorksGraphicks>
-                    </div>
-                            ))}
+                            </WeekWorksGraphicks>
+                        </div>
+                    ))}
 
                     <ModalButtonDiv>
-                        <Button background='white' border='1px solid'>Отмена</Button>
-                        <Button color="white" >Сохранить</Button>
+                        <Button
+                            background="white"
+                            border="1px solid #00315D"
+                            color="#00315D"
+                            onClick={handleClose}
+                        >
+                            Отмена
+                        </Button>
+                        <Button color="white">Сохранить</Button>
                     </ModalButtonDiv>
                 </ModalContent>
             </Modal>
@@ -164,58 +166,53 @@ export default function ModalUnstyled({ handleClose }) {
     )
 }
 
-
-
-
-
 const ModalButtonDiv = styled('div')(() => ({
-    width:'100%',
-    display:'flex',
-    flexDirection:'row',
-    justifyContent:'space-between',
-    alignItems:'center',
-    marginTop:'30px'
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: '30px',
 }))
 
-const ModalContent = styled('div')(() => ({
-    height: '800px',
+const ModalContent = styled('div')(({ height }) => ({
+    height: `${(height * 80) / 100}px `,
     overflowX: 'scroll',
-    fontFamily:'Nunito Sans',
+    fontFamily: 'Nunito Sans',
     '&::-webkit-scrollbar': {
         display: 'none',
-    }
-    
+    },
 }))
 const GraphicksWorkInputDiv = styled('div')(() => ({
-    width:'199px',
-    display:'flex',
-    flexDirection:'row',
-    justifyContent:'space-between',
-    alignItems:'center'
+    width: '199px',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
 }))
 const GraphicksWorkCheckBox = styled('input')(() => ({
-    width:'22px',
-    height:'22px',
-    borderRadius:'4px'
+    width: '22px',
+    height: '22px',
+    borderRadius: '4px',
 }))
 const GraphicksWorkInput = styled('input')(() => ({
     width: '85px',
-    height:'36px',
-    overflow:"hidden"
+    height: '36px',
+    overflow: 'hidden',
 }))
 const DayInTheWeek = styled('span')(() => ({
     width: '125px',
-    fontSize:'20px',
-    fontStyle:'normal',
-    fontWeight:'600',
+    fontSize: '20px',
+    fontStyle: 'normal',
+    fontWeight: '600',
 }))
 const WeekWorksGraphicks = styled('div')(() => ({
     width: '100%',
     display: 'flex',
     flexDirection: 'row',
-    alignItems:'center',
+    alignItems: 'center',
     justifyContent: 'space-between',
-    marginTop:'16px'
+    marginTop: '16px',
 }))
 const GraphicksText = styled('span')(() => ({
     fontSize: '18px',
@@ -294,4 +291,3 @@ const AddNewImgDiv = styled('div')(() => ({
     height: '251px',
     marginBottom: '24px',
 }))
-

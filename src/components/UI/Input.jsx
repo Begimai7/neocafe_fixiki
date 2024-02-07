@@ -32,8 +32,11 @@ const InputContainer = styled('div')(({ width, marginBottom }) => ({
     flexDirection: 'column',
     width,
     marginBottom,
+    '.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root ': {
+        borderRadius: '10px',
+    },
 }))
-const Label = styled('label')(({ width, padding }) => ({
+const Label = styled('label')(() => ({
     color: '#C1C1C3',
     fontFamily: 'Nunito Sans',
     fontSize: '16px',
@@ -42,17 +45,11 @@ const Label = styled('label')(({ width, padding }) => ({
     lineHeight: '100%',
 
 }))
-const InputStayled = styled(TextField)(({ width, padding, background,height, borderRadius}) => ({
-    borderRadius: borderRadius,
+const InputStayled = styled(TextField)(({ background }) => ({
+    borderRadius: '10px',
     backgroundColor: background,
-
     color: '#0000',
     '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': {
-        borderColor: 'transparent',        
+        borderColor: 'transparent',
     },
-
-    '.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root':{
-        height: '36px'
-    }
-
 }))
