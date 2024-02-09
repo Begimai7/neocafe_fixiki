@@ -7,6 +7,9 @@ import { Employees } from '../pages/employees/Employees'
 import ProtectRoute from './protect-route'
 import { ROLES } from '../utils/constants'
 import { BaristaLayout } from '../layout/BaristaLayout'
+import { Orders } from '../pages/barista/Orders'
+import { BaristaMenu } from '../pages/barista/menu/BaristaMenu'
+import { Profile } from '../pages/barista/profile/Profile'
 
 export const router = createBrowserRouter([
     {
@@ -35,6 +38,19 @@ export const router = createBrowserRouter([
     {
         path: '/barista',
         element: <BaristaLayout />,
-        children: [{}],
+        children: [
+            {
+                path: 'orders',
+                element: <Orders />,
+            },
+            {
+                path: 'menu',
+                element: <BaristaMenu />,
+            },
+            {
+                path: 'profile',
+                element: <Profile />,
+            },
+        ],
     },
 ])
