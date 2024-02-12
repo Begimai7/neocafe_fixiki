@@ -1,10 +1,12 @@
 import React from 'react'
-import BaristaSignIn from '../components/barista/BaristaSignIn'
+// import BaristaSignIn from '../components/barista/BaristaSignIn'
+import BaristaTabs from '../components/UI/BaristaTabs'
 
 export const BaristaLayout = () => {
     return (
         <div>
-            <BaristaSignIn />
+            {/* <BaristaSignIn /> */}
+            <BaristaTabs />
         </div>
     )
 }
