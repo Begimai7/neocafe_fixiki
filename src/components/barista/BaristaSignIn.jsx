@@ -3,6 +3,7 @@ import { styled } from '@mui/material'
 import ArrowLeft from '../../assets/img/ArrowLeft.png'
 import Button from '../UI/Button'
 import Input from '../UI/Input'
+import phone from '../../assets/img/phone.png'
 const BaristaSignIn = () => {
     const [signIn, setSignIn] = useState(1)
 
@@ -13,41 +14,57 @@ const BaristaSignIn = () => {
     const getCodingHandlClick = () => {
         setSignIn(3)
     }
+
     return (
-        <StyledContainerBlock>
-            <StyledContainerDiv>
-                <StyledContainerBlockOne>
-                    <StyledIconArrow>
-                        <img
-                            onClick={() =>
-                                setSignIn(signIn > 1 ? signIn - 1 : 1)
-                            }
-                            src={ArrowLeft}
-                            alt=""
-                        />
-                    </StyledIconArrow>
-                    <h2
-                        style={{
-                            color: 'white',
-                            fontFamily: 'Nunito Sans',
-                            margin: '13px 0 0 0 ',
-                        }}
-                    >
-                        Шаг {signIn} из 3
-                    </h2>
-                    <p style={{ fontFamily: 'Nunito Sans' }}>
-                        Укажите номер телефона
-                    </p>
-                </StyledContainerBlockOne>
-                {signIn === 1 && (
+        <div
+            style={{
+                background: `url(${phone})`,
+                width: '100%',
+                height: '100vh',
+                position: 'relative',
+            }}
+        >
+            <StyledMainBlock>
+                <StyledContainerBlock>
                     <div>
-                        <StyledTextBlock>
-                            <StyledHOneTitle>Вход</StyledHOneTitle>
-                            <StyledPoragraf>
+                        <StyledIconArrow>
+                            <img
+                                onClick={() =>
+                                    setSignIn(signIn > 1 ? signIn - 1 : 1)
+                                }
+                                src={ArrowLeft}
+                                alt=""
+                            />
+                        </StyledIconArrow>
+                        <h2
+                            style={{
+                                color: 'white',
+                                fontFamily: 'Nunito Sans',
+                                margin: ' 10px 0 0 0 ',
+                            }}
+                        >
+                            Шаг {signIn} из 3
+                        </h2>
+                        <p
+                            style={{
+                                color: 'white',
+                                fontFamily: 'Nunito Sans',
+                                margin: ' 8px 0 5px 0 ',
+                            }}
+                        >
+                            Укажите номер телефона
+                        </p>
+                    </div>
+                </StyledContainerBlock>
+                {signIn === 1 && (
+                    <StyledShagBoxBI>
+                        <div>
+                            <StyledShagHOneTitle>Вход</StyledShagHOneTitle>
+                            <StyledShagPoragraf>
                                 Введите номер телефона, на который придет код
-                            </StyledPoragraf>
-                        </StyledTextBlock>
-                        <StyledBox>
+                            </StyledShagPoragraf>
+                        </div>
+                        <StyledShagBoxses>
                             <Input
                                 width={'534px'}
                                 height={'70px'}
@@ -64,23 +81,23 @@ const BaristaSignIn = () => {
                             >
                                 Получить код
                             </Button>
-                        </StyledBox>
-                    </div>
+                        </StyledShagBoxses>
+                    </StyledShagBoxBI>
                 )}
 
                 {signIn === 2 && (
                     <div>
-                        <StyledShagBoxses>
+                        <StyledBoxxBlock>
                             <div>
-                                <StyledShagHOneTitle>Вход</StyledShagHOneTitle>
-                                <StyledShagPoragraf>
+                                <StyledShagPfTwo>Вход</StyledShagPfTwo>
+                                <StyledTextP>
                                     Код подтверждения был отправлен на номер
-                                </StyledShagPoragraf>
-                                <StyledShagPoragrafTwo>
+                                </StyledTextP>
+                                <StyledTextPTwo>
                                     +996 (220)269 907
-                                </StyledShagPoragrafTwo>
+                                </StyledTextPTwo>
                             </div>
-                            <StyledShagBoxBI>
+                            <StyledBox>
                                 <Input
                                     width={'534px'}
                                     height={'70px'}
@@ -102,13 +119,13 @@ const BaristaSignIn = () => {
                                         Отправить повторно
                                     </StyledPtext>
                                 </div>
-                            </StyledShagBoxBI>
-                        </StyledShagBoxses>
+                            </StyledBox>
+                        </StyledBoxxBlock>
                     </div>
                 )}
                 {signIn === 3 && (
                     <div>
-                        <StyledShagThreeBox>
+                        <StyledContainerBlockOne>
                             <Input
                                 label={'Имя'}
                                 width={'534px'}
@@ -144,127 +161,76 @@ const BaristaSignIn = () => {
                             >
                                 Войти
                             </Button>
-                        </StyledShagThreeBox>
+                        </StyledContainerBlockOne>
                     </div>
                 )}
-            </StyledContainerDiv>
-        </StyledContainerBlock>
+            </StyledMainBlock>
+        </div>
     )
 }
 
 export default BaristaSignIn
-const StyledContainerDiv = styled('div')(() => ({
-    width: '614px',
-    height: '628px',
-    borderRadius: '20px',
+const StyledMainBlock = styled('div')(() => ({
+    display: 'flex',
+    position: 'absolute',
+    flexDirection: 'column',
+    justifyContent: 'center',
     background: 'white',
+    width: '614px',
+    height: '600px',
+    borderRadius: '20px',
+    left: '460px',
+    top: '70px',
 }))
 const StyledContainerBlock = styled('div')({
-    background: 'black',
-    height: '100vh',
     display: 'flex',
-    alignItems: 'center',
     justifyContent: 'center',
-    position: 'relative',
-})
-const StyledContainerBlockOne = styled('div')({
     background: '#FF8B5B',
+    textAlign: 'center',
     width: '614px',
     height: '90px',
     alignItems: 'center',
-    flexDirection: 'column',
-    gap: '-10px',
-    display: 'flex',
-    borderTopLeftRadius: '10px',
-    borderTopRightRadius: '10px',
-    p: {
-        color: 'white',
-        fontFamily: 'Nunito Sans',
-        fontWeigt: 700,
-        margin: '10px 0',
-    },
+    position: 'absolute',
+    top: '0',
+    borderTopLeftRadius: '20px',
+    borderTopRightRadius: '20px',
 })
-const StyledTextBlock = styled('div')(() => ({
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    gap: '20px',
-}))
-const StyledBox = styled('div')(() => ({
-    position: 'absolute  ',
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '20px',
-    bottom: '120px',
-    left: '500px',
-}))
-const StyledHOneTitle = styled('h1')(() => ({
-    Width: '172px',
-    Height: '98px',
-    fontFamily: 'Nunito Sans',
-    fontSize: '72px',
-    fontWeight: 700,
-    lineHeight: '98px',
-    margin: '20px 0',
-}))
-const StyledPoragraf = styled('p')(() => ({
-    width: '431px',
-    height: '62',
-    textAlign: 'center',
-    fontFamily: 'Nunito Sans',
-    fontSize: '24px',
-    margin: '0 0 0 30px',
-    fontWeight: 700,
-}))
 const StyledShagHOneTitle = styled('h1')(() => ({
     Width: '172px',
     Height: '98px',
     fontFamily: 'Nunito Sans',
     fontSize: '72px',
     fontWeight: 700,
-    margin: '20px 0',
+    margin: '20px 0 0 0 ',
     textAlign: 'center',
 }))
 const StyledShagPoragraf = styled('p')(() => ({
-    width: '650px',
+    width: '495px',
     height: '62',
     textAlign: 'center',
     fontFamily: 'Nunito Sans',
     fontSize: '24px',
     fontWeight: 700,
+    alignItems: 'center',
+    marginLeft: '60px',
 }))
 const StyledShagBoxses = styled('div')(() => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    marginTop: '20px',
+    gap: '25px',
 }))
 const StyledShagBoxBI = styled('div')(() => ({
-    position: 'absolute',
-    bottom: '125px',
+    bottom: '55px',
     display: 'flex',
     gap: '20px',
     flexDirection: 'column',
-}))
-const StyledShagPoragrafTwo = styled('p')(() => ({
-    fontFamily: 'Nunito Sans',
-    position: 'absolute',
-    bottom: '320px',
-    left: '638px',
-    fontSize: '24px',
-    fontWeight: 700,
-}))
-const StyledShagThreeBox = styled('div')(() => ({
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    gap: '35px',
     marginTop: '50px',
 }))
 const StyledIconArrow = styled('div')(() => ({
     position: 'absolute',
-    left: '480px',
-    top: '80px',
+    left: '25px',
+    top: '25px',
 }))
 const StyledPtext = styled('p')(() => ({
     position: 'absolute',
@@ -273,3 +239,47 @@ const StyledPtext = styled('p')(() => ({
     fontWeight: 600,
     left: '160px',
 }))
+const StyledShagPfTwo = styled('p')(() => ({
+    Width: '172px',
+    Height: '98px',
+    fontFamily: 'Nunito Sans',
+    fontSize: '72px',
+    fontWeight: 700,
+    margin: '20px 0 0 0 ',
+    textAlign: 'center',
+}))
+const StyledTextP = styled('p')(() => ({
+    fontFamily: 'Nunito Sans',
+    fontSize: '20px',
+    fontWeight: 600,
+    left: '160px',
+}))
+const StyledTextPTwo = styled('p')(() => ({
+    fontFamily: 'Nunito Sans',
+    fontSize: '20px',
+    fontWeight: 600,
+    borderBottom: '2px solid black',
+    width: '180px',
+    marginLeft: '125px',
+}))
+const StyledBoxxBlock = styled('div')(() => ({
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    textAlign: 'center',
+    marginTop: '30px',
+}))
+const StyledBox = styled('div')(() => ({
+    display: 'flex',
+    gap: '15px',
+    flexDirection: 'column',
+    marginTop: '20px',
+}))
+const StyledContainerBlockOne = styled('div')({
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '35px',
+    marginTop: '75px',
+})
