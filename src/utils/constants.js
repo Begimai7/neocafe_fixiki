@@ -2,7 +2,6 @@ export const ROLES = {
     ADMIN: 'ADMIN',
     BARISTA: 'BARISTA',
 }
-
 export const titlesMenuHeaderTable = [
     {
         id: 'one',

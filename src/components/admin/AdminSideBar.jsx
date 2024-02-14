@@ -52,7 +52,6 @@ export default function SideBar({ existHandler }) {
                         <ListStyled>
                             {sidebarMenu.map((el) => (
                                 <ListItemStyled key={el.id} disablePadding to={el.path}>
-
                                     <ListItemButtonStyle>
                                         <ListItemTextStyle
                                             primary={el.name}
@@ -68,7 +67,6 @@ export default function SideBar({ existHandler }) {
                                 </ListItemStyled>
                             ))}     
                         </ListStyled>
-
                     </div>
                     <SignOutDiv onClick={existHandler}>
                         <span>Выход</span>
@@ -93,6 +91,7 @@ const SignOutDiv = styled('div')`
 
 const ListItemStyled = styled(Link)(({ active }) => ({
     paddingLeft: '10px',
+    // borderBottom: active === 'true' ? '2px solid #7f48af' : 'none',
 }))
 const ListStyled = styled(List)(() => ({
     display:'flex',
