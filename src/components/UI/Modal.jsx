@@ -4,7 +4,7 @@ import { Modal as MuiModal } from '@mui/material'
 import { styled } from '@mui/material'
 
 
-export default function Modal({ children, open, handleClose, borderRadius, width }) {
+export default function Modal({ border, children, open, handleClose, borderRadius, width }) {
   
   const style = {
     position: 'absolute',
@@ -12,7 +12,8 @@ export default function Modal({ children, open, handleClose, borderRadius, width
     left: '50%',
     transform: 'translate(-50%, -50%)',
     bgcolor: 'background.paper',
-    border: '2px solid #000',
+    border: border,
+    borderRadius: borderRadius,
     boxShadow: 24,
     p: 4,
 }
@@ -20,8 +21,8 @@ export default function Modal({ children, open, handleClose, borderRadius, width
     return (
         <div>
             <StyledModal
-                open={true}
-                onClose={handleClose}
+                open={open}
+                onClick={handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
                 borderRadius={borderRadius}
@@ -34,7 +35,7 @@ export default function Modal({ children, open, handleClose, borderRadius, width
 }
 
 const StyledModal = styled(MuiModal)(({ borderRadius, width }) => ({
-    '.css-1wnsr1i ': {
+    '.css-1wnsr1i' : {
         outline: 'none',
         border: 'none',
         width: width,

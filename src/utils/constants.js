@@ -1,3 +1,6 @@
+import copy from '../assets/icon/copy.svg'
+import TrashSimple from '../assets/icon/TrashSimple.svg'
+
 export const titlesMenuHeaderTable = [
     {
         id: 'one',
@@ -318,3 +321,15 @@ export const editSklad = [
         name: 'Сырье',
     },
 ]
+export const miniCardButtons = [
+    {
+      id: 1,
+      name: 'Дублировать',
+      icon: copy,
+    },
+    {
+      id: 2,
+      name: 'Удалить',
+      icon: TrashSimple
+    },
+  ]
