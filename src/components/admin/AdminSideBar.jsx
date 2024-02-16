@@ -119,6 +119,7 @@ const ListItemTextStyle = styled(ListItemText)(({ active }) => ({
         fontSize: '18px',
         fontWeight: 900,
         fontFamily: 'Nunito Sans',
+        borderBottom: active === 'true' ? '2px solid #00315D' : 'none',
     },
     borderBottom: active === 'true' ? '2px solid #00315D' : 'none',
 }))
