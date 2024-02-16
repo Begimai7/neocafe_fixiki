@@ -1,15 +1,8 @@
-import { useState } from "react";
-import CreateMenuModal from "./components/admin/CreateMenuModal"
+import Table from "./components/admin/Table/Table"
 
-const App = () => {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => {
-    setOpen(!open);
-  };
+function App() {
   return (
-    <div> 
-      <CreateMenuModal openModal={open} handleCloseModal={handleOpen} />
-    </div>
+      <Table/>
   )
 }
 
