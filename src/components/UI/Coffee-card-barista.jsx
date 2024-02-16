@@ -54,7 +54,6 @@ export const CoffeeCardBarista = () => {
 
   return (
     <div >
-      <button  onClick={openModal} >click</button>
 
       {modalOpen && (
         <div
