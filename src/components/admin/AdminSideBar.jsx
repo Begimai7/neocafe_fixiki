@@ -5,14 +5,19 @@ import CssBaseline from '@mui/material/CssBaseline'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import List from '@mui/material/List'
-import ListItem from '@mui/material/ListItem'
 import ListItemText from '@mui/material/ListItemText'
-import exit from '../../assets/icon/exist.svg'
+import exit from '../../assets/icon/SignOut.svg'
 import { sidebarMenu } from '../../utils/constants'
+import { Link } from 'react-router-dom'
+import { useCurrentPath } from '../../hook/useCurrentPath'
 
 const drawerWidth = 202
 
 export default function SideBar({ existHandler }) {
+    const path = useCurrentPath()
+    // const pathName = role === 'USER' ? 'user' : 'admin'
+    const pathName = 'admin'
+
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
@@ -44,15 +49,24 @@ export default function SideBar({ existHandler }) {
                                 Aroma<LogotipeCafe>cafe</LogotipeCafe>
                             </LogotipeAroma>
                         </Toolbar>
-                        <List>
+                        <ListStyled>
                             {sidebarMenu.map((el) => (
-                                <ListItemStyled key={el.id} disablePadding>
+                                <ListItemStyled key={el.id} disablePadding to={el.path}>
                                     <ListItemButtonStyle>
-                                        <ListItemTextStyle primary={el.name} />
+                                        <ListItemTextStyle
+                                            primary={el.name}
+                                            pathname={el.pathname}
+                                            active={
+                                                path ===
+                                                `/${pathName}/${el.path}`
+                                                    ? 'true'
+                                                    : 'false'
+                                            }
+                                        />
                                     </ListItemButtonStyle>
                                 </ListItemStyled>
                             ))}     
-                        </List>
+                        </ListStyled>
                     </div>
                     <SignOutDiv onClick={existHandler}>
                         <span>Выход</span>
@@ -75,8 +89,13 @@ const SignOutDiv = styled('div')`
     cursor: pointer;
 `
 
-const ListItemStyled = styled(ListItem)(() => ({
+const ListItemStyled = styled(Link)(({ active }) => ({
     paddingLeft: '10px',
+    // borderBottom: active === 'true' ? '2px solid #7f48af' : 'none',
+}))
+const ListStyled = styled(List)(() => ({
+    display:'flex',
+    flexDirection:'column'
 }))
 
 const ListItemButtonStyle = styled('button')(() => ({
@@ -87,7 +106,7 @@ const ListItemButtonStyle = styled('button')(() => ({
     padding: '8px 16px',
 }))
 
-const ListItemTextStyle = styled(ListItemText)(() => ({
+const ListItemTextStyle = styled(ListItemText)(({ active }) => ({
     borderBottom: '2px solid  #ffffff0',
     fontWeight: 900,
     fontSize: '18px',
@@ -101,6 +120,7 @@ const ListItemTextStyle = styled(ListItemText)(() => ({
         fontWeight: 900,
         fontFamily: 'Nunito Sans',
     },
+    borderBottom: active === 'true' ? '2px solid #00315D' : 'none',
 }))
 const DrawerStyle = styled('div')(() => ({
     display: 'flex',

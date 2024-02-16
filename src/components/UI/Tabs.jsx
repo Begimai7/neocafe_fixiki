@@ -39,7 +39,7 @@ function a11yProps(index) {
     }
 }
 
-export default function Tads({ children, tabTitle }) {
+export default function AdminTabs({ children, tabTitle }) {
     const [value, setValue] = React.useState(0)
 
     const handleChange = (event, newValue) => {
@@ -59,12 +59,12 @@ export default function Tads({ children, tabTitle }) {
                         onChange={handleChange}
                         aria-label="basic tabs example"
                     >
-                        <Tab label=" Готовая продукция" {...a11yProps(0)} />
+                        {/* <Tab label=" Готовая продукция" {...a11yProps(0)} />
                         <Tab label=" Сырье" {...a11yProps(1)} />
                         <Tab
                             label="Заканчивающиеся продукты"
                             {...a11yProps(2)}
-                        />
+                        /> */}
 
                         {tabTitle.map((el) => (
                             <Tab label={el.name} />

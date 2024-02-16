@@ -3,7 +3,6 @@ import Box from '@mui/material/Box'
 import { Modal as MuiModal } from '@mui/material'
 import { styled } from '@mui/material'
 
-
 export default function Modal({ border, children, open, handleClose, borderRadius, width }) {
   
   const style = {
@@ -18,11 +17,13 @@ export default function Modal({ border, children, open, handleClose, borderRadiu
     p: 4,
 }
 
+
     return (
         <div>
             <StyledModal
                 open={open}
                 onClick={handleClose}
+                onClose={handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
                 borderRadius={borderRadius}
@@ -35,10 +36,13 @@ export default function Modal({ border, children, open, handleClose, borderRadiu
 }
 
 const StyledModal = styled(MuiModal)(({ borderRadius, width }) => ({
-    '.css-1wnsr1i' : {
+    '.css-1gkse3u ': {
+        border: 'none',
+        borderRadius,
+    },
+    '.css-1wnsr1i ': {
         outline: 'none',
         border: 'none',
         width: width,
-        borderRadius: borderRadius,
     },
 }))

@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import Button from '../UI/Button'
 import Select from '../UI/Select'
 import { editSklad } from '../../utils/constants'
+import cancelIcon from '../../assets/icon/cancel.svg'
 
 export const EditSkladModal = ({ open, handleClose }) => {
     return (
@@ -14,6 +15,16 @@ export const EditSkladModal = ({ open, handleClose }) => {
             borderRadius="16px"
             backgroundColor="#FEFEFE"
         >
+            <ModalHeader>
+                <Button
+                    padding={0}
+                    backgroundColor="white"
+                    onClick={handleClose}
+                    justifyContent="sp"
+                >
+                    <img src={cancelIcon} alt="" />
+                </Button>
+            </ModalHeader>
             <TextStyled>Редактирование</TextStyled>
             <SpanStyled>Наименование, категория и стоимость</SpanStyled>
 
@@ -24,26 +35,27 @@ export const EditSkladModal = ({ open, handleClose }) => {
                     <div>
                         <Input
                             label="Кол-во (в гр, мл, л, кг)"
-                            width="98%"
+                            width="200px"
                             marginBottom="20px"
                         />
                         <Input
                             label="Минимальный лимит"
-                            width="98%"
+                            width="200px"
                             marginBottom="20px"
                         />
                     </div>
                     <div>
                         <Select
                             labelText="Категория"
-                            width="190px"
+                            width="200px"
                             marginBottom="10px"
                             SelectData={editSklad}
                         />
                         <Input
                             label="Дата прихода"
-                            width="190px"
+                            width="200px"
                             marginBottom="20px"
+                            type="date"
                         />
                     </div>
                 </StyledDiv>
@@ -57,7 +69,6 @@ export const EditSkladModal = ({ open, handleClose }) => {
                     borderColor="blue"
                     border="1px solid #00315D "
                     backgroundColor=" #FEFEFE"
-                    
                 >
                     Отмена
                 </Button>
@@ -74,6 +85,15 @@ export const EditSkladModal = ({ open, handleClose }) => {
         </Modal>
     )
 }
+const ModalHeader = styled('div')(() => ({
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    width: '90%',
+    height: '8px',
+    position: 'absolute',
+}))
 
 const DivStyled = styled('div')({
     display: 'flex',
@@ -84,7 +104,7 @@ const DivStyled = styled('div')({
     display: 'flex',
 })
 const TextStyled = styled('h5')({
-    marginBottom: '24px',
+    marginBottom: '29px',
     marginTop: '3px',
     marginLeft: '5px',
     fontFamily: 'Nunito Sans',
