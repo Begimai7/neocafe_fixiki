@@ -7,6 +7,8 @@ import { Employees } from '../pages/employees/Employees'
 import ProtectRoute from './protect-route'
 import { ROLES } from '../utils/constants'
 import { BaristaLayout } from '../layout/BaristaLayout'
+import BaristaSignIn from '../components/barista/BaristaSignIn'
+// import BaristaTabs from '../components/UI/BaristaTabs'
 
 export const router = createBrowserRouter([
     {
@@ -34,6 +36,15 @@ export const router = createBrowserRouter([
     {
         path: '/barista',
         element: <BaristaLayout />,
-        children: [{}],
+        children: [
+            {
+                path: 'signIn',
+                element: <BaristaSignIn />,
+            },
+            // {
+            //     path: 'baristatabs',
+            //     element: <BaristaTabs />,
+            // },
+        ],
     },
 ])
