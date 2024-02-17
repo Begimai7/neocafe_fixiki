@@ -15,6 +15,7 @@ const drawerWidth = 202
 
 export default function SideBar({ existHandler }) {
     const path = useCurrentPath()
+    console.log(path, 'cnvh')
     // const pathName = role === 'USER' ? 'user' : 'admin'
     const pathName = 'admin'
 

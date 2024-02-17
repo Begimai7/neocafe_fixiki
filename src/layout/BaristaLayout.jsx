@@ -1,9 +1,15 @@
 import React from 'react'
-import { CoffeeCardBarista } from '../components/UI/Coffee-card-barista'
-
+import BaristaSideBar from '../components/barista/BaristaSideBar'
+import { Outlet } from 'react-router-dom'
 
 export const BaristaLayout = () => {
-    return <div>
-        <CoffeeCardBarista />
-    </div>
+    return (
+        <div style={{ display: 'flex' }}>
+            <BaristaSideBar />
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+                Barista tab
+                <Outlet />
+            </div>
+        </div>
+    )
 }
