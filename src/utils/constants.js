@@ -1,3 +1,7 @@
+import Notepad from '../assets/icon/barista/Notepad.svg'
+import BookOpen from '../assets/icon/barista/BookOpen.svg'
+import UserCircle from '../assets/icon/barista/UserCircle.svg'
+
 export const ROLES = {
     ADMIN: 'ADMIN',
     BARISTA: 'BARISTA',
@@ -354,4 +358,24 @@ export const notifacation = [
         products:'Капучино х1,Латте х1'
     },
    
+]
+export const baristaSideBar = [
+    {
+        id: 1,
+        icon: Notepad,
+        name: 'Заказы',
+        path: 'orders',
+    },
+    {
+        id: 2,
+        icon: BookOpen,
+        name: 'Меню',
+        path: 'menu',
+    },
+    {
+        id: 3,
+        icon: UserCircle,
+        name: 'Профиль',
+        path: 'profile',
+    },
 ]
