@@ -1,3 +1,5 @@
+import copy from '../assets/icon/copy.svg'
+import TrashSimple from '../assets/icon/TrashSimple.svg'
 import Notepad from '../assets/icon/barista/Notepad.svg'
 import BookOpen from '../assets/icon/barista/BookOpen.svg'
 import UserCircle from '../assets/icon/barista/UserCircle.svg'
@@ -273,6 +275,19 @@ export const editSklad = [
         name: 'Сырье',
     },
 ]
+export const miniCardButtons = [
+    {
+      id: 1,
+      name: 'Дублировать',
+      icon: copy,
+    },
+    {
+      id: 2,
+      name: 'Удалить',
+      icon: TrashSimple
+    },
+  ]
+
 
 
 export const skladTabsTitle = [

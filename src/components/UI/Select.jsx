@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
-import { Select as MuiSelect, styled } from '@mui/material'
+import { InputLabel, Select as MuiSelect, styled } from '@mui/material'
 import { SelectData } from '../../utils/constants.js'
 
-export default function Select({  labelText, width, marginBottom }) {
+export default function Select({ labelText, width, marginBottom }) {
+
     const [selectedCategory, setSelectedCategory] = useState('')
 
     const handleChange = (event) => {
@@ -14,7 +15,6 @@ export default function Select({  labelText, width, marginBottom }) {
     return (
         <StyledFormControl width={width} marginBottom={marginBottom}>
             <Label>{labelText}</Label>
-            {/* <InputLabel id="demo-select-small-label">Select Category</InputLabel> */}
             <MuiSelect
                 id="demo-select-small"
                 value={selectedCategory}
@@ -22,9 +22,10 @@ export default function Select({  labelText, width, marginBottom }) {
             >
                 {SelectData.map((category) => (
                     <MenuItem key={category.id} value={category.id}>
-                        {category.name}
+                        {category.name} 
                     </MenuItem>
                 ))}
+
             </MuiSelect>
         </StyledFormControl>
     )
@@ -38,10 +39,9 @@ const Label = styled('label')(() => ({
     lineHeight: '16px',
     letterSpacing: '0em',
     textAlign: 'left',
-    width: '78px',
+    minWidth: '220px',
     height: '16px',
     color: '#C1C1C3',
-
 }))
 
 const StyledFormControl = styled(FormControl)(({ width, marginBottom }) => ({
