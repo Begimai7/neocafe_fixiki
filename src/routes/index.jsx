@@ -12,8 +12,7 @@ import BaristaSignIn from '../components/barista/BaristaSignIn'
 
 export const router = createBrowserRouter([
     {
-        path: '/admin',
-
+        path: '/admin', 
         element: <ProtectRoute component={AdminLayout} roles={ROLES.ADMIN} />,
         children: [
             {

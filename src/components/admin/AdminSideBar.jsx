@@ -6,7 +6,7 @@ import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import List from '@mui/material/List'
 import ListItemText from '@mui/material/ListItemText'
-import exit from '../../assets/icon/exist.svg'
+import exit from '../../assets/icon/SignOut.svg'
 import { sidebarMenu } from '../../utils/constants'
 import { Link } from 'react-router-dom'
 import { useCurrentPath } from '../../hook/useCurrentPath'
@@ -49,15 +49,9 @@ export default function SideBar({ existHandler }) {
                                 Aroma<LogotipeCafe>cafe</LogotipeCafe>
                             </LogotipeAroma>
                         </Toolbar>
-                        <List
-                            style={{ display: 'flex', flexDirection: 'column' }}
-                        >
+                        <ListStyled>
                             {sidebarMenu.map((el) => (
-                                <ListItemStyled
-                                    key={el.id}
-                                    disablePadding
-                                    to={el.path}
-                                >
+                                <ListItemStyled key={el.id} disablePadding to={el.path}>
                                     <ListItemButtonStyle>
                                         <ListItemTextStyle
                                             primary={el.name}
@@ -71,8 +65,8 @@ export default function SideBar({ existHandler }) {
                                         />
                                     </ListItemButtonStyle>
                                 </ListItemStyled>
-                            ))}
-                        </List>
+                            ))}     
+                        </ListStyled>
                     </div>
                     <SignOutDiv onClick={existHandler}>
                         <span>Выход</span>
@@ -98,6 +92,10 @@ const SignOutDiv = styled('div')`
 const ListItemStyled = styled(Link)(({ active }) => ({
     paddingLeft: '10px',
     // borderBottom: active === 'true' ? '2px solid #7f48af' : 'none',
+}))
+const ListStyled = styled(List)(() => ({
+    display:'flex',
+    flexDirection:'column'
 }))
 
 const ListItemButtonStyle = styled('button')(() => ({
