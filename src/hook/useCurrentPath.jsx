@@ -6,6 +6,9 @@ const pathConfig = [
     { path: '/admin/sklad/*' },
     { path: '/admin/branches/*' },
     { path: '/admin/employees/*' },
+    { path: '/barista/orders/*' },
+    { path: '/barista/menu/*' },
+    { path: '/barista/profile/*' },
 ]
 
 export const useCurrentPath = () => {

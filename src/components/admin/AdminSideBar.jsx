@@ -15,6 +15,7 @@ const drawerWidth = 202
 
 export default function SideBar({ existHandler }) {
     const path = useCurrentPath()
+    console.log(path, 'cnvh')
     // const pathName = role === 'USER' ? 'user' : 'admin'
     const pathName = 'admin'
 
@@ -119,6 +120,7 @@ const ListItemTextStyle = styled(ListItemText)(({ active }) => ({
         fontSize: '18px',
         fontWeight: 900,
         fontFamily: 'Nunito Sans',
+        borderBottom: active === 'true' ? '2px solid #00315D' : 'none',
     },
     borderBottom: active === 'true' ? '2px solid #00315D' : 'none',
 }))

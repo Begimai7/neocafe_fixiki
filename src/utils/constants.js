@@ -1,5 +1,8 @@
 import copy from '../assets/icon/copy.svg'
 import TrashSimple from '../assets/icon/TrashSimple.svg'
+import Notepad from '../assets/icon/barista/Notepad.svg'
+import BookOpen from '../assets/icon/barista/BookOpen.svg'
+import UserCircle from '../assets/icon/barista/UserCircle.svg'
 
 export const ROLES = {
     ADMIN: 'ADMIN',
@@ -299,5 +302,95 @@ export const skladTabsTitle = [
     {
         id: 3,
         name: 'Заканчивающиеся продукты',
+    },
+]
+
+export const notificationProdacts = [
+    {
+        id: 1,
+        name: 'Копучино',
+        src:'https://latte.ru/wa-data/public/site/img/capp.jpeg',
+        commet:'соевое молоко клубничный сироп',
+        price:'140'
+    },
+    {
+        id: 2,
+        name: 'Копучино',
+        src:'https://latte.ru/wa-data/public/site/img/capp.jpeg',
+        commet:'соевое молоко клубничный сироп',
+        price:'140'
+    },
+    {
+        id: 3,
+        name: 'Копучино',
+        src:'https://latte.ru/wa-data/public/site/img/capp.jpeg',
+        commet:'соевое молоко клубничный сироп',
+        price:'140'
+    },
+    {
+        id: 4,
+        name: 'Копучино',
+        src:'https://latte.ru/wa-data/public/site/img/capp.jpeg',
+        commet:'соевое молоко клубничный сироп',
+        price:'140'
+    },
+    {
+        id: 5,
+        name: 'Копучино',
+        src:'https://latte.ru/wa-data/public/site/img/capp.jpeg',
+        commet:'соевое молоко клубничный сироп',
+        price:'140'
+    },
+]
+
+export const notifacation = [
+    {
+        where:'Стол №10',
+        time:'09:02',
+        code:'М-47',
+        for:'(В заведении)',
+        products:'Капучино х1,Латте х1,Чизкейк х1,Багровый зак..'
+    },
+    {
+        where:'На вынос',
+        time:'19:02',
+        code:'М-234',
+        for:'(На вынос)',
+        products:'Капучино х1,Латте х1'
+    },
+    {
+        where:'Стол №5',
+        time:'09:02',
+        code:'М-47',
+        for:'(В заведении',
+        products:'Капучино х1,Латте х1,Чизкейк х1,Багровый зак..'
+    },
+    {
+        where:'На вынос',
+        time:'19:02',
+        code:'М-234',
+        for:'(На вынос)',
+        products:'Капучино х1,Латте х1'
+    },
+   
+]
+export const baristaSideBar = [
+    {
+        id: 1,
+        icon: Notepad,
+        name: 'Заказы',
+        path: 'orders',
+    },
+    {
+        id: 2,
+        icon: BookOpen,
+        name: 'Меню',
+        path: 'menu',
+    },
+    {
+        id: 3,
+        icon: UserCircle,
+        name: 'Профиль',
+        path: 'profile',
     },
 ]

@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import Button from '../UI/Button'
 import Select from '../UI/Select'
 import { editSklad } from '../../utils/constants'
-import cancelIcon from '../../assets/icon/cancel.svg'
+import cancelIcon from '../../assets/icon/cansel.svg'
 
 export const EditSkladModal = ({ open, handleClose }) => {
     return (
