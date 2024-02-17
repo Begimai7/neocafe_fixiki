@@ -3,7 +3,6 @@ import Table from './Table.jsx'
 
 export function createData(one, two, three, four, five, six) {
     return { one, two, three, four, five, six }
-}
 
 export const TableCard = ({ headerTable, dataTable }) => {
     // const rows = dataTable.map((el) =>

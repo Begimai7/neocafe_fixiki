@@ -10,11 +10,11 @@ import { BaristaLayout } from '../layout/BaristaLayout'
 import { Orders } from '../pages/barista/Orders'
 import { BaristaMenu } from '../pages/barista/menu/BaristaMenu'
 import { Profile } from '../pages/barista/profile/Profile'
+import BaristaSignIn from '../components/barista/BaristaSignIn'
 
 export const router = createBrowserRouter([
     {
-        path: '/admin',
-
+        path: '/admin', 
         element: <ProtectRoute component={AdminLayout} roles={ROLES.ADMIN} />,
         children: [
             {
@@ -50,6 +50,9 @@ export const router = createBrowserRouter([
             {
                 path: 'profile',
                 element: <Profile />,
+            },
+                path: 'signIn',
+                element: <BaristaSignIn />,
             },
         ],
     },

@@ -170,6 +170,7 @@ export const titlesEmplayeesHeaderTable = [
         width: 40,
     },
 ]
+
 export const sidebarMenu = [
     {
         id: 1,
@@ -272,6 +273,8 @@ export const editSklad = [
         name: 'Сырье',
     },
 ]
+
+
 export const skladTabsTitle = [
     {
         id: 1,

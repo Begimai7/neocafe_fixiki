@@ -4,7 +4,7 @@ import Modal from '../UI/Modal'
 import Input from '../UI/Input'
 import Button from '../UI/Button'
 import IconX from '../../assets/icon/X.svg'
-function CreateNewCategory({open, handleClose, width) {
+function CreateNewCategory({open, handleClose, width}) {
 
     return (
         <div width="100%">

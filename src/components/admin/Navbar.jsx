@@ -42,7 +42,7 @@ function Navbar({ openChangeHandler }) {
                 />
                 <Button
                     padding="10px 47px"
-                    onClick={(openChangeHandler)}
+                    onClick={openChangeHandler}
                 >
                     Создать
                 </Button>

@@ -7,7 +7,7 @@ export const BaristaLayout = () => {
         <div style={{ display: 'flex' }}>
             <BaristaSideBar />
             <div style={{ display: 'flex', flexDirection: 'column' }}>
-                Eldiyar
+                Barista tab
                 <Outlet />
             </div>
         </div>
