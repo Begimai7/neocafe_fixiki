@@ -1,12 +1,15 @@
 import React from 'react'
-// import BaristaSignIn from '../components/barista/BaristaSignIn'
-import BaristaTabs from '../components/UI/BaristaTabs'
+import BaristaSideBar from '../components/barista/BaristaSideBar'
+import { Outlet } from 'react-router-dom'
 
 export const BaristaLayout = () => {
     return (
-        <div>
-            {/* <BaristaSignIn /> */}
-            <BaristaTabs />
+        <div style={{ display: 'flex' }}>
+            <BaristaSideBar />
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+                Barista tab
+                <Outlet />
+            </div>
         </div>
     )
 }

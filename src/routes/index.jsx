@@ -7,8 +7,10 @@ import { Employees } from '../pages/employees/Employees'
 import ProtectRoute from './protect-route'
 import { ROLES } from '../utils/constants'
 import { BaristaLayout } from '../layout/BaristaLayout'
+import { Orders } from '../pages/barista/Orders'
+import { BaristaMenu } from '../pages/barista/menu/BaristaMenu'
+import { Profile } from '../pages/barista/profile/Profile'
 import BaristaSignIn from '../components/barista/BaristaSignIn'
-// import BaristaTabs from '../components/UI/BaristaTabs'
 
 export const router = createBrowserRouter([
     {
@@ -38,13 +40,20 @@ export const router = createBrowserRouter([
         element: <BaristaLayout />,
         children: [
             {
+                path: 'orders',
+                element: <Orders />,
+            },
+            {
+                path: 'menu',
+                element: <BaristaMenu />,
+            },
+            {
+                path: 'profile',
+                element: <Profile />,
+            },
                 path: 'signIn',
                 element: <BaristaSignIn />,
             },
-            // {
-            //     path: 'baristatabs',
-            //     element: <BaristaTabs />,
-            // },
         ],
     },
 ])
