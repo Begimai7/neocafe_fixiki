@@ -2,6 +2,14 @@ import Notepad from '../assets/icon/barista/Notepad.svg'
 import BookOpen from '../assets/icon/barista/BookOpen.svg'
 import UserCircle from '../assets/icon/barista/UserCircle.svg'
 
+import Coffee from '../assets/icon/barista/coffee-cup .svg'
+import Dessert from '../assets/icon/barista/dessert .svg'
+import Croissan from '../assets/icon/barista/croissant .svg'
+import Cocktail from '../assets/icon/barista/cocktail .svg'
+import Tea from '../assets/icon/barista/tea.svg'
+import Capuchino from '../assets/img/barista/Capuchino.svg'
+import Plus from '../assets/icon/barista/Plus.svg'
+
 export const ROLES = {
     ADMIN: 'ADMIN',
     BARISTA: 'BARISTA',
@@ -304,5 +312,63 @@ export const baristaSideBar = [
         icon: UserCircle,
         name: 'Профиль',
         path: 'profile',
+    },
+]
+export const baristaMenu = [
+    {
+        id: 1,
+        icon: Coffee,
+        name: 'Кофе',
+        path: 'coffee',
+    },
+    {
+        id: 2,
+        icon: Dessert,
+        name: 'Десерты',
+        path: 'dessert',
+    },
+    {
+        id: 3,
+        icon: Croissan,
+        name: 'Выпечка',
+        path: 'croissant',
+    },
+    {
+        id: 4,
+        icon: Cocktail,
+        name: 'Коктейли',
+        path: 'cocktail',
+    },
+    {
+        id: 5,
+        icon: Tea,
+        name: 'чай',
+        path: 'tea',
+    },
+]
+export const baristaCoffee = [
+    {
+        id: 1,
+        iconButton: Plus,
+        img: Capuchino,
+        name: 'Капучино',
+        prise: '140 с',
+        status: 'coffee',
+    },
+    {
+        id: 2,
+        iconButton: Plus,
+        img: Capuchino,
+        name: 'Капучино',
+        prise: '140 с',
+        status: 'coffee',
+    },
+    {
+        id: 3,
+        iconButton: Plus,
+        img: Capuchino,
+        name: 'Капучино',
+        prise: '140 с',
+        status: 'deserts',
     },
 ]

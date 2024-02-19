@@ -8,8 +8,8 @@ import ProtectRoute from './protect-route'
 import { ROLES } from '../utils/constants'
 import { BaristaLayout } from '../layout/BaristaLayout'
 import { Orders } from '../pages/barista/Orders'
-import { BaristaMenu } from '../pages/barista/menu/BaristaMenu'
 import { Profile } from '../pages/barista/profile/Profile'
+import { BaristaMenu } from '../pages/barista/Menu'
 
 export const router = createBrowserRouter([
     {
@@ -46,6 +46,12 @@ export const router = createBrowserRouter([
             {
                 path: 'menu',
                 element: <BaristaMenu />,
+                children: [
+                    {
+                        path: ':name',
+                        element: <BaristaMenu />,
+                    },
+                ],
             },
             {
                 path: 'profile',

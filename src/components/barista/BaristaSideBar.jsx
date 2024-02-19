@@ -7,7 +7,7 @@ import { useCurrentPath } from '../../hook/useCurrentPath.jsx'
 
 const BaristaSideBar = ({ openNotificationHandler }) => {
     const path = useCurrentPath()
-    console.log(path, 'dcdss')
+    console.log(path, '')
     const pathName = 'barista'
     return (
         <SideDiv>
